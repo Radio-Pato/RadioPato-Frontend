@@ -16,7 +16,7 @@ function Registro():JSX.Element {
 
 		<input type="password" name="password" id='password' placeholder='Contraseña'/>
 
-		<button type='submit'>Regitrarse</button>
+		<button type='submit'>Registrarse</button>
 	</form>
 	</div>
   )
