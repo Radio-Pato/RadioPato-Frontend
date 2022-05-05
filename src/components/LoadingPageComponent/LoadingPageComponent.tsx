@@ -5,8 +5,8 @@ import imagenes from '../../assets/imagenes';
 function LoadingPageComponent() {
   return (
 	<div>
-        <img src={imagenes[0].src} alt={imagenes[0].alt} className=""/>
-        
+        <img src={imagenes.Logo960.src} alt={imagenes.Logo960.alt} className=""/>
+
         <h1>Radio Pato</h1>
         <LoadComponent></LoadComponent>
     </div>
