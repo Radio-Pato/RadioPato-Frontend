@@ -1,0 +1,22 @@
+/* CSS for Reactstrap */
+.spinnerReactstrap{
+    width: 150px !important;
+    height: 150px !important;
+
+    border: 10px solid currentColor !important;
+    border-right-color: transparent !important;
+}
+
+.divFather{
+    height: 100vh;
+    position: relative;
+}
+
+.divChild{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
