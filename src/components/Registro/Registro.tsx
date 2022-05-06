@@ -1,5 +1,14 @@
 import "./Registro.css"
+type TInputs ={
+	name: string,
+	surname: string,
+	email: string,
+	address: string,
+	building:string,
+	password: string
+}
 function Registro():JSX.Element {
+
   return (
 	<div className="containerForm">
 	<form action="" className="formStyle">
