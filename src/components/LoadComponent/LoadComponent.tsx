@@ -1,15 +1,13 @@
 import React from 'react';
+import styles from "./LoadComponent.module.css";
 import {Spinner} from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './LoadComponent.css';
 // npm install bootstrap reactstrap
 
 function LoadComponent() {
   return (
-	<div className='divFather'>
-    <div className='divChild'>
-      <Spinner color='success' className='spinnerReactstrap'/>
-    </div>
+	<div className={styles.divFather}>
+      <Spinner className={styles.spinnerReactstrap}/>
   </div>
   )
 }
