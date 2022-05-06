@@ -14,10 +14,17 @@
 	border-color: rgba(0, 0, 0, .20);
 	margin: 5px;
 }
-
+.formStyle input:focus{
+	border-color: rgba(0, 0, 0, .50);
+}
 .formStyle button{
 	padding: 10px;
 	border-radius: 5px;
 	border:none;
-	background-color:rgba(0, 183, 255, 1)
+	background-color:rgba(0, 183, 255, 1);
+	cursor: pointer;
+}
+.formStyle .errors{
+	color: rgba(220, 53, 69,1 );
+	font-weight: bold;
 }
