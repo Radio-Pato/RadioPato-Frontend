@@ -1,0 +1,13 @@
+/* CSS for Reactstrap */
+.spinnerReactstrap {
+  width: 150px !important;
+  height: 150px !important;
+  color: #fff !important;
+  border: 10px solid currentColor !important;
+  border-right-color: transparent !important;
+}
+
+.divFather {
+  margin-top: 50px;
+  padding: 10px;
+}
