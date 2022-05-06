@@ -1,9 +1,9 @@
 import React from "react";
-import styles from "./LoadingPageComponent.module.css";
+import styles from "./LandingPageComponent.module.css";
 import LoadComponent from "../LoadComponent/LoadComponent";
 import imagenes from "../../assets/imagenes";
 
-function LoadingPageComponent() {
+function LandingPageComponent() {
   return (
     <div className={styles.bigcontainer}>
       <div className={styles.container}>
@@ -27,4 +27,4 @@ function LoadingPageComponent() {
   );
 }
 
-export default LoadingPageComponent;
+export default LandingPageComponent;
