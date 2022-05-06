@@ -14,7 +14,7 @@
   height: 500px;
 }
 
-.midcontainer{
+.midcontainer {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -25,7 +25,6 @@
 .smallcontainer {
   display: grid;
   row-gap: 50px;
-  border-bottom: 1px solid #ddd;
   align-content: center;
   border-style: outset;
   text-align: center;
@@ -33,6 +32,7 @@
   padding: 10px;
   box-shadow: 5px 10px 18px black;
   background-color: #baacff;
+  margin: 50px;
 }
 
 .logo {
@@ -45,7 +45,7 @@
     transform: rotate(0deg);
   }
   50% {
-    transform: rotate(40deg);
+    transform: rotate(35deg);
   }
 }
 
