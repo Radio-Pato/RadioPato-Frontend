@@ -1,0 +1,43 @@
+.login {
+    width: 100%;
+    margin: 50px auto;
+    max-width: 680px;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    box-shadow: 0 0 21px 0 rgb(0 0 0 / 13%);
+}
+.login__left {
+    width: 40%;
+}
+.login__right {
+    width: 60%;
+    padding: 20px;
+}
+.tittle {
+    padding: 10px;
+    color: gray;
+    font-size: large;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.tittleActive {
+    color: black !important;
+    text-decoration: underline;
+    
+}
+.images {
+    height: 480px; /* Valor quemado */
+    width: 100%;
+    background-size: cover;
+    background-position:center;
+    background-repeat: no-repeat;
+    border-radius: 20px 0 0 20px; 
+}
+.img1 {
+    background-image: url(/src/Assets/Access.jpg);
+}
+.img2 {
+    background-image: url(/src/Assets/Register.jpg);
+}
