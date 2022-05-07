@@ -1,11 +1,12 @@
 :root {
   --background-white-color: #fffffe;
   --background-lightblue-color: #9bbaee;
+  --background-title-purple: #a096eb;
+  --background-button: #6246ea;
+  --text-shadow-title: #f3efba;
+  
   --background-gradient-color: radial-gradient(
     var(--background-white-color),
     var(--background-lightblue-color)
   );
-  --background-title-purple: #a096eb;
-  --background-button: #6246ea;
-  --text-shadow-title: #f3efba;
 }
