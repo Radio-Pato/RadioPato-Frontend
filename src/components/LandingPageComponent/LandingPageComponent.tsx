@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./LandingPageComponent.module.css";
 import LoadComponent from "../LoadComponent/LoadComponent";
-import imagenes from "../../assets/imagenes";
+import imagenes from "../../Assets/imagenes";
 
 function LandingPageComponent() {
   return (
@@ -19,8 +19,7 @@ function LandingPageComponent() {
               Tu aplicación Web para gestionar tu comunidad de vecinos
             </h3>
           </div>
-
-          <LoadComponent />
+          <button className={styles.buttonAcceder}>Acceder</button>
         </div>
       </div>
     </div>
