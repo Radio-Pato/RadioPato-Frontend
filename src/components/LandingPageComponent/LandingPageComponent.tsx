@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./LandingPageComponent.module.css";
-import LoadComponent from "../LoadComponent/LoadComponent";
 import imagenes from "../../Assets/imagenes";
+import {Link} from "react-router-dom";
 
 function LandingPageComponent() {
   return (
@@ -19,7 +19,7 @@ function LandingPageComponent() {
               Tu aplicación Web para gestionar tu comunidad de vecinos
             </h3>
           </div>
-          <button className={styles.buttonAcceder}>Acceder</button>
+          <Link to={"/login"} className={styles.linkAcceder}>Acceder</Link>
         </div>
       </div>
     </div>
