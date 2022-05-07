@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import "../../Assets/css/variables.css";
 
 .bigcontainer {
-  background-color: #9966ff;
-  background-image: radial-gradient(#fffffe, #9bbaee);
+  background-image: var(--background-gradient-color);
   height: 100vh;
   font-family: "Open Sans", sans-serif;
 }
@@ -27,13 +27,13 @@
   display: grid;
   row-gap: 50px;
   align-content: center;
-  border: 5px solid #fffffe;
+  border: 5px solid var(--background-white-color);
   border-style: outset;
   text-align: center;
   border-radius: 20px;
   padding: 10px;
   box-shadow: 5px 10px 18px black;
-  background-color: #a096eb;
+  background-color: var(--background-title-purple);
   margin: 50px;
 }
 
@@ -45,11 +45,11 @@
 .linkAcceder {
   margin: 50px;
   padding: 30px;
-  border: 5px solid #fffffe;
+  border: 5px solid var(--background-white-color);
   border-radius: 20px;
   box-shadow: 5px 10px 18px black;
-  color: #fffffe;
-  background-color: #6246ea;
+  color: var(--background-white-color);
+  background-color: var(--background-button);
   font-weight: bold;
   font-size: 24px;
   text-decoration: none;
@@ -58,9 +58,9 @@
 }
 
 .linkAcceder:hover {
-  border: 5px solid #6246ea;
-  color: #6246ea;
-  background-color: #fffffe;
+  border: 5px solid var(--background-button);
+  color: var(--background-button);
+  background-color: var(--background-white-color);
   cursor: pointer;
   border-style: inset;
   font-weight: bold;
@@ -77,7 +77,8 @@
 
 .title {
   font-weight: bold;
-  text-shadow: 1px 1px 2px black, 0 0 25px #f3efba, 0 0 5px #f3efba;
+  text-shadow: 1px 1px 2px black, 0 0 25px var(--text-shadow-title),
+    0 0 5px var(--text-shadow-title);
 }
 
 .slogan {
