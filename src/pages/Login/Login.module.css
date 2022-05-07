@@ -36,8 +36,8 @@
     border-radius: 20px 0 0 20px; 
 }
 .img1 {
-    background-image: url(/src/Assets/Access.jpg);
+    background-image: url(/src/Assets/img/Access.jpg);
 }
 .img2 {
-    background-image: url(/src/Assets/Register.jpg);
+    background-image: url(/src/Assets/img/Register.jpg);
 }
