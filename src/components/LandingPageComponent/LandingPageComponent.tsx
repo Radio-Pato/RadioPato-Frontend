@@ -15,9 +15,8 @@ function LandingPageComponent() {
         <div className={styles.midcontainer}>
           <div className={styles.smallcontainer}>
             <h1 className={styles.title}>Radio Pato</h1>
-            <h3 className={styles.slogan}>
-              Tu aplicación Web para gestionar tu comunidad de vecinos
-            </h3>
+            <h3 className={styles.slogan}>Tu Aplicación Web para gestionar tu comunidad de vecinos.</h3>
+            <h4 className={styles.slogan}>&#129414; Mientras los gansos hacen honk, los patos hacen cuack. &#129414;</h4>
           </div>
           <Link to={"/login"} className={styles.linkAcceder}>Acceder</Link>
         </div>

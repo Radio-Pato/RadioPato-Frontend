@@ -25,14 +25,13 @@
 
 .smallcontainer {
   display: grid;
-  row-gap: 50px;
   align-content: center;
-  border: 5px solid var(--color-white-background);
+  border: 5px solid var(--color-purple-background);
   border-style: outset;
   text-align: center;
   border-radius: 20px;
   padding: 10px;
-  box-shadow: 5px 10px 18px black;
+  box-shadow: var(--box-shadows-landingPageComponent);
   background-color: var(--color-purple-background);
   margin: 50px;
 }
@@ -45,9 +44,9 @@
 .linkAcceder {
   margin: 50px;
   padding: 30px;
-  border: 5px solid var(--color-white-background);
+  border: 5px solid var(--color-purple-background-button);
   border-radius: 20px;
-  box-shadow: 5px 10px 18px black;
+  box-shadow: var(--box-shadows-landingPageComponent);
   color: var(--color-white-background);
   background-color: var(--color-purple-background-button);
   font-weight: bold;
@@ -61,9 +60,9 @@
   border: 5px solid var(--color-purple-background-button);
   color: var(--color-purple-text-active);
   background-color: var(--color-purple-background);
-  cursor: pointer;
   border-style: inset;
   font-weight: bold;
+  cursor: pointer;
 }
 
 @keyframes rotation {
