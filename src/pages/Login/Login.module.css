@@ -1,3 +1,12 @@
+@import "../../Assets/css/variables.css";
+
+body{
+    background-image: var(--radial-gradient-background);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+}
+
 .login {
     width: 100%;
     margin: 50px auto;
@@ -6,6 +15,7 @@
     justify-content: center;
     border-radius: 20px;
     box-shadow: 0 0 21px 0 rgb(0 0 0 / 13%);
+    background-color: var(--color-purple-background);
 }
 .login__left {
     width: 40%;
@@ -14,16 +24,23 @@
     width: 60%;
     padding: 20px;
 }
+
+.login__tittles{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
 .tittle {
     padding: 10px;
-    color: gray;
+    color: var(--color-white-background);
     font-size: large;
     font-weight: bold;
     cursor: pointer;
 }
 
 .tittleActive {
-    color: black !important;
+    color: var(--color-purple-text-active) !important;
     text-decoration: underline;
     
 }

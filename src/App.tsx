@@ -1,11 +1,12 @@
 import './App.css'
+import LandingPageComponent from './components/LandingPageComponent/LandingPageComponent'
 
 function App() {
 
 
   return (
     <div className="App">
-      <h1>Radio Pato</h1>
+      <LandingPageComponent></LandingPageComponent>
     </div>
   )
 }

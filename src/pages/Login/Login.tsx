@@ -26,7 +26,7 @@ function Login() {
       </div>
 
       <div className={styles.login__right}>
-        <div>
+        <div className={styles.login__tittles}>
           <span className= {`${styles.tittle} 
             ${changer 
                 ? styles.tittleActive 

@@ -2,7 +2,7 @@
 @import "../../Assets/css/variables.css";
 
 .bigcontainer {
-  background-image: var(--background-gradient-color);
+  background-image: var(--radial-gradient-background);
   height: 100vh;
   font-family: "Open Sans", sans-serif;
 }
@@ -27,13 +27,13 @@
   display: grid;
   row-gap: 50px;
   align-content: center;
-  border: 5px solid var(--background-white-color);
+  border: 5px solid var(--color-white-background);
   border-style: outset;
   text-align: center;
   border-radius: 20px;
   padding: 10px;
   box-shadow: 5px 10px 18px black;
-  background-color: var(--background-title-purple);
+  background-color: var(--color-purple-background);
   margin: 50px;
 }
 
@@ -45,11 +45,11 @@
 .linkAcceder {
   margin: 50px;
   padding: 30px;
-  border: 5px solid var(--background-white-color);
+  border: 5px solid var(--color-white-background);
   border-radius: 20px;
   box-shadow: 5px 10px 18px black;
-  color: var(--background-white-color);
-  background-color: var(--background-button);
+  color: var(--color-white-background);
+  background-color: var(--color-purple-background-button);
   font-weight: bold;
   font-size: 24px;
   text-decoration: none;
@@ -58,9 +58,9 @@
 }
 
 .linkAcceder:hover {
-  border: 5px solid var(--background-button);
-  color: var(--background-button);
-  background-color: var(--background-white-color);
+  border: 5px solid var(--color-purple-background-button);
+  color: var(--color-purple-text-active);
+  background-color: var(--color-purple-background);
   cursor: pointer;
   border-style: inset;
   font-weight: bold;
@@ -77,8 +77,8 @@
 
 .title {
   font-weight: bold;
-  text-shadow: 1px 1px 2px black, 0 0 25px var(--text-shadow-title),
-    0 0 5px var(--text-shadow-title);
+  text-shadow: 1px 1px 2px black, 0 0 25px var(--color-lightyellow-shadow-tittle),
+    0 0 5px var(--color-lightyellow-shadow-tittle);
 }
 
 .slogan {
