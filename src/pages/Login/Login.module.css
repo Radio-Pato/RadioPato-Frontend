@@ -1,3 +1,12 @@
+@import "../../Assets/css/variables.css";
+
+body{
+    background-image: var(--radial-gradient-background);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+}
+
 .login {
     width: 100%;
     margin: 50px auto;
@@ -5,7 +14,8 @@
     display: flex;
     justify-content: center;
     border-radius: 20px;
-    box-shadow: 0 0 21px 0 rgb(0 0 0 / 13%);
+    box-shadow: var(--box-shadows-landingPageComponent); /*0 0 21px 0 rgb(0 0 0 / 13%);*/
+    background-color: var(--color-purple-background);
 }
 .login__left {
     width: 40%;
@@ -14,20 +24,26 @@
     width: 60%;
     padding: 20px;
 }
+
+.login__tittles{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
 .tittle {
     padding: 10px;
-    color: #d1d1e9;
-    font-size: 22px;
+    color: var(--color-purple-text-active);
+    font-size: large;
     font-weight: bold;
     cursor: pointer;
 }
 
-.tittleActive {
-    color: #2b2c34 !important;
+.tittleActive {   
+    color: var(--color-white-background) !important;
     text-decoration: underline;
-    text-decoration-color: #6246ea;
-    
 }
+
 .images {
     height: 462px; /* Valor quemado */
     width: 100%;
@@ -37,8 +53,8 @@
     border-radius: 20px 0 0 20px; 
 }
 .img1 {
-    background-image: url(/src/Assets/Access.jpg);
+    background-image: url(/src/Assets/img/Access.jpg);
 }
 .img2 {
-    background-image: url(/src/Assets/Register.jpg);
+    background-image: url(/src/Assets/img/Register.jpg);
 }

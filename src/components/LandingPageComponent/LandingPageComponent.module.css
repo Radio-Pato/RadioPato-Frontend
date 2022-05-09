@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import "../../Assets/css/variables.css";
+
+.bigcontainer {
+  background-image: var(--radial-gradient-background);
+  height: 100vh;
+  font-family: "Open Sans", sans-serif;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 500px;
+}
+
+.midcontainer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: space-between;
+}
+
+.smallcontainer {
+  display: grid;
+  align-content: center;
+  border: 5px solid var(--color-purple-background);
+  border-style: outset;
+  text-align: center;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: var(--box-shadows-landingPageComponent);
+  background-color: var(--color-purple-background);
+  margin: 50px;
+}
+
+.logo {
+  animation: rotation 2s infinite linear;
+  filter: drop-shadow(10px 10px 10px black);
+}
+
+.linkAcceder {
+  margin: 50px;
+  padding: 30px;
+  border: 5px solid var(--color-purple-background-button);
+  border-radius: 20px;
+  box-shadow: var(--box-shadows-landingPageComponent);
+  color: var(--color-white-background);
+  background-color: var(--color-purple-background-button);
+  font-weight: bold;
+  font-size: 24px;
+  text-decoration: none;
+  text-align: center;
+  border-style: outset;
+}
+
+.linkAcceder:hover {
+  border: 5px solid var(--color-purple-background-button);
+  color: var(--color-purple-text-active);
+  background-color: var(--color-purple-background);
+  border-style: inset;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(35deg);
+  }
+}
+
+.title {
+  font-weight: bold;
+  text-shadow: 1px 1px 2px black, 0 0 25px var(--color-lightyellow-shadow-tittle),
+    0 0 5px var(--color-lightyellow-shadow-tittle);
+}
+
+.slogan {
+  font-weight: bold;
+}
+
+/*
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+}
+
+@media (max-width :1024px { body { width; 100%}}
+*/
