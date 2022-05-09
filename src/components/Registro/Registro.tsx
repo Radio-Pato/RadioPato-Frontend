@@ -1,5 +1,10 @@
 import "./Registro.css";
+import {useState, useContext} from 'react'
+import { AuthContext } from "../../contexts/DataContext"; 
 import { useForm } from "react-hook-form";
+import { postRegister } from '../../utils/Services'
+
+
 type TInputs = {
   name: string;
   surname: string;
@@ -8,7 +13,11 @@ type TInputs = {
   building: string;
   password: string;
 };
-function Registro(): JSX.Element {
+interface Props {
+  setChanger:any
+}
+function Registro({setChanger}: Props): JSX.Element {
+/*   const  {auth, setAuth}:any = useContext(AuthContext) */
   const {
     register,
     handleSubmit,
@@ -16,7 +25,21 @@ function Registro(): JSX.Element {
   } = useForm<TInputs>({
     reValidateMode: "onChange",
   });
-  const onSubmitTest = (data: TInputs) => console.log(data);
+  const onSubmitTest = async (data: TInputs) =>{
+      postRegister(data)
+      .then((res) => {
+        console.log(res.data);
+        if(res.data.status===200){
+          /* setAuth(true) */
+          setChanger(true)
+          alert(`usuario ${res.data.data.name} fue registrado con Exito! iniciar Seccion primero`)
+        }
+      
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+    };
   return (
     <div className="containerForm">
       <form onSubmit={handleSubmit(onSubmitTest)} className="formStyle">

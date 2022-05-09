@@ -40,7 +40,7 @@ function Login() {
         
         {changer
         ?<Acceso />
-        :<Registro />
+        :<Registro setChanger= {setChanger}/>
         }
       </div>
 

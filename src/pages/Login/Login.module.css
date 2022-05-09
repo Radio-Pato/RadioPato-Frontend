@@ -16,19 +16,20 @@
 }
 .tittle {
     padding: 10px;
-    color: gray;
-    font-size: large;
+    color: #d1d1e9;
+    font-size: 22px;
     font-weight: bold;
     cursor: pointer;
 }
 
 .tittleActive {
-    color: black !important;
+    color: #2b2c34 !important;
     text-decoration: underline;
+    text-decoration-color: #6246ea;
     
 }
 .images {
-    height: 480px; /* Valor quemado */
+    height: 462px; /* Valor quemado */
     width: 100%;
     background-size: cover;
     background-position:center;

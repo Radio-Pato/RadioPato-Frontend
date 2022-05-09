@@ -1,13 +1,13 @@
 .formStyle{
 	display: flex;
 	flex-direction: column;
-	width: 100%;
 	justify-content: center;
 	align-items: center;
+	padding: 14px;
 }
 
 .formStyle input{
-	width: 50%;
+	width: 95%;
 	padding: 10px;
 	border-radius: 5px;
 	outline: none;
@@ -18,11 +18,21 @@
 	border-color: rgba(0, 0, 0, .50);
 }
 .formStyle button{
+	color: #fffffe;
+    margin-top: 20px;
+    border-radius: 20px;
+    height: 45px;
+    width: 100%;
+    font-weight: 600;
+    letter-spacing: 1px;
 	padding: 10px;
-	border-radius: 5px;
 	border:none;
-	background-color:rgba(0, 183, 255, 1);
+	background-color:#6246ea;
 	cursor: pointer;
+}
+.formStyle button:hover{
+	background: #583be8;
+    transform: scale(1.02);
 }
 .formStyle .errors{
 	color: rgba(220, 53, 69,1 );
