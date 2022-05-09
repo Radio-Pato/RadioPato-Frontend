@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { useForm } from "react-hook-form";
-import './Acceso.css' 
+import './Acceso.css'
 import { getRegister } from '../../utils/Services'
 
 type TInputs = {
@@ -22,11 +22,11 @@ function Acceso() {
 
   /* const data = {email:"prueba@gmail.com",password:"palmira123"} */
 
-  const onSubmitTest = async (data: TInputs) =>{
-    console.log(data);
-    getRegister()
+  const onSubmitTest = async (data: any) =>{
+
+   getRegister(data)
     .then((res) => {
-      console.log(res.data);
+      console.log(res.data.arg);
     })
     .catch((err) => {
       console.error(err);
@@ -56,7 +56,7 @@ function Acceso() {
               <div className="errors">
                 Los apellidos no pueden contener mas de 60 carácteres
               </div>
-            )} 
+            )}
         </div>
         <div className="input-container">
         <input
