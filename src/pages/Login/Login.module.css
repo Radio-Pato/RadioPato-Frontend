@@ -39,13 +39,13 @@ body{
     cursor: pointer;
 }
 
-.tittleActive {
+.tittleActive {   
     color: var(--color-white-background) !important;
     text-decoration: underline;
 }
 
 .images {
-    height: 480px; /* Valor quemado */
+    height: 462px; /* Valor quemado */
     width: 100%;
     background-size: cover;
     background-position:center;

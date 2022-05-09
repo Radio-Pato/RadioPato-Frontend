@@ -1,0 +1,68 @@
+.appForm {
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 95%;
+	padding: 10px;
+	border-radius: 5px;
+	outline: none;
+	border-color: rgba(0, 0, 0, .20);
+	margin: 5px;
+}
+
+input[type="submit"] {
+    color: #fffffe;
+    margin-top: 20px;
+    border-radius: 20px;
+    height: 45px;
+    width: 100%;
+    font-weight: 600;
+    letter-spacing: 1px;
+	padding: 10px;
+	border:none;
+	background-color:#6246ea;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background: #583be8;
+    transform: scale(1.02);
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.login-form {
+    padding: 10px;
+    width: 100%;
+}
+
+.list-container {
+    display: flex;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+}
+
+.title {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 10px;
+}
