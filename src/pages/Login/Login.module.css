@@ -1,0 +1,60 @@
+@import "../../Assets/css/variables.css";
+
+body{
+    background-image: var(--radial-gradient-background);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+}
+
+.login {
+    width: 100%;
+    margin: 50px auto;
+    max-width: 680px;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    box-shadow: var(--box-shadows-landingPageComponent); /*0 0 21px 0 rgb(0 0 0 / 13%);*/
+    background-color: var(--color-purple-background);
+}
+.login__left {
+    width: 40%;
+}
+.login__right {
+    width: 60%;
+    padding: 20px;
+}
+
+.login__tittles{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.tittle {
+    padding: 10px;
+    color: var(--color-purple-text-active);
+    font-size: large;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.tittleActive {   
+    color: var(--color-white-background) !important;
+    text-decoration: underline;
+}
+
+.images {
+    height: 462px; /* Valor quemado */
+    width: 100%;
+    background-size: cover;
+    background-position:center;
+    background-repeat: no-repeat;
+    border-radius: 20px 0 0 20px; 
+}
+.img1 {
+    background-image: url(/src/Assets/img/Access.jpg);
+}
+.img2 {
+    background-image: url(/src/Assets/img/Register.jpg);
+}
