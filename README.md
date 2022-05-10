@@ -7,7 +7,8 @@ This project will hold all the packages for the frontend.
 
 ```
 src/
-| components/
+| assets/
+|-- components/
 |   |-- Register/
 |   |   |-- Register.tsx\n
 |   |   |-- Register.css
