@@ -1,0 +1,46 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    background-color: white;
+    transition: all 0.5s ease-in-out;
+}
+.burgerBtn {
+    display: none;
+}
+.logo h1 {
+    cursor: pointer;
+}
+.nav {
+    display: flex;
+}
+.navLinks{
+    margin: 0 10px;
+    color: black;
+    padding: 5px 15px;
+    border-radius: 100px;
+    transition:all 0.5s ease-in-out;
+    text-decoration: none; 
+} 
+.navActive {
+    display: flex;
+}
+
+
+@media (max-width: 624px){
+    .burgerBtn{
+       display: inline-block; 
+    }
+    .nav{
+        position: absolute;
+        flex-direction: column;
+        right: 0;
+        top: 71px;
+        background: white;  
+    }
+    .navInactive {
+        display: none;  
+    } 
+}

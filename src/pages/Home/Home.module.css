@@ -1,0 +1,17 @@
+.main {
+    display: flex;
+}
+.right {
+    max-width: 260px;
+}
+.left {
+    width: 100%;
+}
+@media (max-width: 624px) {
+    .main {
+        display: inline-block;
+    }
+    .right {
+        max-width: unset;
+    }
+}
