@@ -26,9 +26,9 @@
     margin-top: 10px;
     margin-bottom: 10px;
     box-shadow: var(--box-shadows-landingPageComponent);
-    background-color: var(--color-purple-background);
+    background-color: var(--color-lightpurple-active);
     border-radius: 20px;
-    border: 5px solid var(--color-purple-background);
+    border: 5px solid var(--color-lightpurple-active);
     border-style: outset;
 }
 
