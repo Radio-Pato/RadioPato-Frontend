@@ -26,7 +26,7 @@ function Acceso() {
 
    getRegister(data)
     .then((res) => {
-      console.log(res.data.arg);
+      console.log(res.data);
     })
     .catch((err) => {
       console.error(err);
