@@ -1,0 +1,55 @@
+details {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+}
+  summary {
+    position: relative;
+    writing-mode: vertical-lr;
+    text-align: center;
+    padding: 12px 10px;
+    width: 23px;
+    height: 17px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+    transition: transform 200ms ease-in-out 0s;
+  }
+  summary::before,
+  summary::after {
+    position: absolute;
+    top: 4px;
+    left: -1px;
+  }
+  summary::before {
+    content: "";
+  }
+  summary::after {
+    content: "III";
+    letter-spacing: -1px;
+    position: absolute;
+    top: 4px;
+    left: -1px;
+  }
+  summary:hover {
+    transform: scale(1.1);
+  }
+  summary::marker {
+    font-size: 0;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  details[open] .menu {
+    animation-name: menuAnim;
+  }
+  details[open] summary::before {
+    content: "X";
+  }
+  details[open] summary::after {
+    content: "";
+  }
+  details[open]::before {
+    animation: fadeMe 300ms linear forwards;
+  }
