@@ -8,11 +8,7 @@ function Home() {
   return (
     <Layout>
       <main className={styles.main}>
-        <section className={styles.left}>Contenido</section>
-        <section className={styles.right}>
-          <Navbar />
-        </section>
-        <section>
+        <section className={styles.left}>
           <div className={styles.comments__container}>
             <div className={styles.comment}>
               <p>Esto es un comentario.</p>
@@ -26,7 +22,56 @@ function Home() {
             <div className={styles.comment}>
               <p>Esto es un comentario.</p>
             </div>
+            <div className={styles.comment}>
+              <p>Esto es un comentario.</p>
+            </div>
+            <div className={styles.comment}>
+              <p>Esto es un comentario.</p>
+            </div>  
+            <div className={styles.comment}>
+              <p>Esto es un comentario.</p>
+            </div>
+            <div className={styles.comment}>
+              <p>Esto es un comentario.</p>
+            </div>
+            <div className={styles.comment}>
+              <p>Esto es un comentario.</p>
+            </div>
+            <div className={styles.comment}>
+              <p>Esto es un comentario.</p>
+            </div>
+            <div className={styles.comment}>
+              <p>Esto es un comentario.</p>
+            </div>
+            <div className={styles.comment}>
+              <p>Esto es un comentario.</p>
+            </div>
+            <div className={styles.comment}>
+              <p>Esto es un comentario.</p>
+            </div>
+            <div className={styles.comment}>
+              <p>Esto es un comentario.</p>
+            </div>
+            <div className={styles.comment}>
+              <p>Esto es un comentario.</p>
+            </div>
+            <div className={styles.comment}>
+              <p>Esto es un comentario.</p>
+            </div>
+            <div className={styles.comment}>
+              <p>Esto es un comentario.</p>
+            </div>
+            <div className={styles.comment}>
+              <p>Esto es un comentario.</p>
+            </div>
+            <div className={styles.comment}>
+              <p>Esto es un comentario.</p>
+            </div>
+            
           </div>
+        </section>
+        <section className={styles.right}>
+          <Navbar />
         </section>
       </main>
     </Layout>
