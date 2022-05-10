@@ -1,4 +1,29 @@
+@import "../../Assets/css/variables.css";
 
+body{
+    background-image: var(--radial-gradient-background);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+}
+
+.comments__container{
+    padding: 10px;
+    box-shadow: var(--box-shadows-landingPageComponent);
+    background-color: var(--color-purple-background-button);
+    border-radius: 20px;
+    border: 5px solid var(--color-purple-background-button);
+    border-style: outset;
+}
+
+.comment{
+    padding: 10px;
+    box-shadow: var(--box-shadows-landingPageComponent);
+    background-color: var(--color-purple-background);
+    border-radius: 20px;
+    border: 5px solid var(--color-purple-background);
+    border-style: outset;
+}
 
 /* Media queries */
 
