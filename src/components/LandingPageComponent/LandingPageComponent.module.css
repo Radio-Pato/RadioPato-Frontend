@@ -5,26 +5,30 @@
   background-image: var(--radial-gradient-background);
   height: 100vh;
   font-family: "Open Sans", sans-serif;
+  display: flex;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 .container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 700px auto;
   align-items: center;
   justify-content: center;
-
   height: 500px;
+  justify-items: center;
 }
 
 .midcontainer {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  display: grid;
   justify-content: center;
-  justify-content: space-between;
+  grid-column-start: 2;
+  grid-column-end: 3;
 }
 
 .smallcontainer {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   align-content: center;
   border: 5px solid var(--color-purple-background);
   border-style: outset;
@@ -33,12 +37,14 @@
   padding: 10px;
   box-shadow: var(--box-shadows-landingPageComponent);
   background-color: var(--color-purple-background);
-  margin: 50px;
+  min-width: 400px;
 }
 
 .logo {
   animation: rotation 2s infinite linear;
   filter: drop-shadow(10px 10px 10px black);
+  grid-column-start: 1;
+  grid-column-end: 2;
 }
 
 .linkAcceder {
@@ -76,7 +82,8 @@
 
 .title {
   font-weight: bold;
-  text-shadow: 1px 1px 2px black, 0 0 25px var(--color-lightyellow-shadow-tittle),
+  text-shadow: 1px 1px 2px black,
+    0 0 25px var(--color-lightyellow-shadow-tittle),
     0 0 5px var(--color-lightyellow-shadow-tittle);
 }
 
@@ -84,19 +91,63 @@
   font-weight: bold;
 }
 
+.servicescontainer {
+  display: grid;
+  text-align: center;
+  justify-content: center;
+  grid-template-columns: auto auto auto;
+  row-gap: 20px;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.serviciostitle {
+  text-align: center;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  font-weight: bold;
+}
+
+.dispositivos {
+  min-width: 200px;
+}
+
+.digitalizado {
+  min-width: 200px;
+}
+
+.sencillez {
+  min-width: 200px;
+}
+
+.icon {
+  color: var(--color-orange-tertiary);
+}
+
 /* Media queries */
 
 /* Medium devices (tablets, 768px and up) */
 @media (max-width: 768px) {
-
-}
-
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .servicescontainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 /*  Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-
+@media (max-width: 1200px) {
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .servicescontainer {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
