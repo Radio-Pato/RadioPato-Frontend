@@ -9,9 +9,7 @@ header {
     background-color: var(--color-purple-background);
     transition: all 0.5s ease-in-out;
 }
-.burgerBtn {
-    display: none;
-}
+
 .icon__container {
     display: flex;
     justify-content: space-around;
@@ -28,14 +26,17 @@ header {
 }
 .navLinks{
     margin: 0 10px;
-    color: black;
+    color: var(--color-white-background);
     padding: 5px 15px;
-    border-radius: 100px;
     transition:all 0.5s ease-in-out;
     text-decoration: none; 
 } 
 .navActive {
     display: flex;
+}
+
+.burgerBtn {
+    display: none;
 }
 
 @media (max-width: 768px){
@@ -47,9 +48,13 @@ header {
         flex-direction: column;
         right: 0;
         top: 71px;
-        background: white;  
+        background: var(--color-lightpurple-active);  
     }
     .navInactive {
         display: none;  
     } 
+
+    .navLinks{
+        border-bottom: 1px solid var(--color-purple-background-button);
+    }
 }
