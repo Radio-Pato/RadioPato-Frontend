@@ -36,7 +36,7 @@ function LandingPageComponent() {
         </div>
         <div className={styles.servicescontainer}>
           <h2 className={styles.serviciostitle}>Lo que ofrecemos</h2>
-          <div className={styles.dispositivos}>
+          <div className={styles.cards}>
             <FontAwesomeIcon
               icon={faMobileAlt}
               className={styles.icon}
@@ -53,7 +53,7 @@ function LandingPageComponent() {
               siempre informado.
             </p>
           </div>
-          <div className={styles.digitalizado}>
+          <div className={styles.cards}>
             <FontAwesomeIcon
               icon={faDigitalTachograph}
               className={styles.icon}
@@ -65,7 +65,7 @@ function LandingPageComponent() {
               contenido de tu comunidad de vecinos.
             </p>
           </div>
-          <div className={styles.sencillez}>
+          <div className={styles.cards}>
             <FontAwesomeIcon
               icon={faHandsHelping}
               className={styles.icon}
