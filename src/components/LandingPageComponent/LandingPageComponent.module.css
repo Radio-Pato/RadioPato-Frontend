@@ -8,6 +8,7 @@
   display: flex;
   background-attachment: fixed;
   background-position: center;
+  width: auto;
 }
 
 .container {
@@ -17,6 +18,7 @@
   justify-content: center;
   height: 500px;
   justify-items: center;
+  min-width: 100%;
 }
 
 .midcontainer {
@@ -95,7 +97,7 @@
   display: grid;
   text-align: center;
   justify-content: center;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
   row-gap: 20px;
   grid-column-start: 1;
   grid-column-end: 3;
