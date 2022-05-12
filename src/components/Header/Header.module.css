@@ -23,7 +23,7 @@ header {
 
 .nav {
     display: flex;
-    margin-right: 5px;
+    margin-right: 20px;
 }
 .navLinks{
     margin: 0 10px;
