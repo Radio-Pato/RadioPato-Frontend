@@ -52,6 +52,8 @@ header {
         background: var(--color-purple-text-active);  
         opacity: 0.8;
         border-top-left-radius: 5px;
+        width: 25%;
+        height: 20%;
     }
     .navInactive {
         display: none;  
@@ -60,6 +62,9 @@ header {
     .navLinks{
         border-bottom: 1px solid var(--color-white-background);
         margin: 0;
-        padding: 10px;
+        padding: 20px 10px 10px 10px;
+        text-align: center;
+        width: auto;
+        height: 50%;
     }
 }
