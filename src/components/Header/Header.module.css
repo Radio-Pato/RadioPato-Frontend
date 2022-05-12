@@ -23,6 +23,7 @@ header {
 
 .nav {
     display: flex;
+    margin-right: 5px;
 }
 .navLinks{
     margin: 0 10px;
@@ -48,13 +49,17 @@ header {
         flex-direction: column;
         right: 0;
         top: 71px;
-        background: var(--color-lightpurple-active);  
+        background: var(--color-purple-text-active);  
+        opacity: 0.8;
+        border-top-left-radius: 5px;
     }
     .navInactive {
         display: none;  
     } 
 
     .navLinks{
-        border-bottom: 1px solid var(--color-purple-background-button);
+        border-bottom: 1px solid var(--color-white-background);
+        margin: 0;
+        padding: 10px;
     }
 }

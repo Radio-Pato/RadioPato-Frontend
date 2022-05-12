@@ -3,6 +3,9 @@
 details {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 30px;
+    margin-right: 5px;
+    background-color: var(--color-purple-background-button);
+    border-radius: 5px;
 }
   summary {
     position: relative;
@@ -11,7 +14,6 @@ details {
     padding: 12px 10px;
     width: 23px;
     height: 17px;
-    background-color: var(--color-lightpurple-active);
     color: black;
     cursor: pointer;
     user-select: none;
@@ -29,10 +31,8 @@ details {
   }
   summary::after {
     content: "III";
-    letter-spacing: -1px;
-    position: absolute;
-    top: 4px;
-    left: -1px;
+    color: var(--color-white-background);
+    padding: 5px;
   }
   summary:hover {
     transform: scale(1.1);
@@ -48,10 +48,17 @@ details {
   }
   details[open] summary::before {
     content: "X";
+    color: var(--color-white-background);
+    padding: 5px;
   }
   details[open] summary::after {
     content: "";
   }
   details[open]::before {
     animation: fadeMe 300ms linear forwards;
+  }
+
+  details[open]{
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
   }
