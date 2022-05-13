@@ -5,10 +5,7 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-attachment: fixed;
-
-    display: flex;
-    flex-direction: column;
-
+    
     min-height: 100vh;
     display: flex;
     flex-direction: column;

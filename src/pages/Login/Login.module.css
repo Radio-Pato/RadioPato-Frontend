@@ -25,6 +25,10 @@ body {
 .login__right {
   width: 60%;
   padding: 20px;
+  
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .login__tittles {
@@ -63,9 +67,6 @@ body {
   width: 285px;
 }
 
-.footer {
-}
-
 /* Media queries */
 
 /* Medium devices (tablets, 768px and up) */
@@ -86,9 +87,9 @@ body {
 }
 
 /* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-}
+/* @media (min-width: 992px) {
+} */
 
 /*  Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-}
+/* @media (min-width: 1200px) {
+} */
