@@ -9,35 +9,40 @@ function Footer() {
         <ul className={styles.socialMedia}>
             <li className={styles.icons}>
                 <a className={styles.branded}
-                    href='https://www.linkedin.com/'
-                    target="_blank">
-                    <FontAwesomeIcon icon={faLinkedin}/>
-                </a>
-            </li>
-            <li className={styles.icons}>
-                <a className={styles.branded}
-                    href='https://github.com/'
+                    href='https://github.com/Radio-Pato'
                     target="_blank">
                     <FontAwesomeIcon icon={faGithub}/>
-                </a>
-            </li>
-            <li className={styles.icons}>
-                <a className={styles.branded}
-                    href='https://twitter.com/?lang=es'
-                    target="_blank">
-                    <FontAwesomeIcon icon={faTwitter}/>
-                </a>
-            </li>
-            <li className={styles.icons}>
-                <a className={styles.branded}
-                    href='https://es-es.facebook.com/'
-                    target="_blank">
-                    <FontAwesomeIcon icon={faFacebook}/>
                 </a>
             </li>
         </ul>
     </footer>
   )
 }
+
+/*
+
+    <li className={styles.icons}>
+        <a className={styles.branded}
+            href='https://www.linkedin.com/'
+            target="_blank">
+            <FontAwesomeIcon icon={faLinkedin}/>
+        </a>
+    </li>
+    <li className={styles.icons}>
+        <a className={styles.branded}
+            href='https://twitter.com/?lang=es'
+            target="_blank">
+            <FontAwesomeIcon icon={faTwitter}/>
+        </a>
+    </li>
+    <li className={styles.icons}>
+        <a className={styles.branded}
+            href='https://es-es.facebook.com/'
+            target="_blank">
+            <FontAwesomeIcon icon={faFacebook}/>
+        </a>
+    </li>
+
+*/
 
 export default Footer

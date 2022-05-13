@@ -11,12 +11,6 @@ export const postRegister = async (data:any) => {
 
   export const getRegister = async (data:any) => {
 	let URL = `${URL_MAIN}acceso`;
-	let response = await axios.get('http://localhost:3001/users/acceso',{
-		params: {
-			email: data.email,
-			password: data.password
-		}
-	});
-
+	let response = await axios.post('http://localhost:3001/users/acceso',data)
     return response;
   };
