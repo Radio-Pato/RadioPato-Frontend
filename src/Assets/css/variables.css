@@ -1,0 +1,18 @@
+:root {
+  /* colors */
+  --color-white-background: #fafafa;
+  --color-lightpurple-active: #b8b1eb;
+  --color-lightblue-background: #9bbaee;
+  --color-purple-background: #a096eb;
+  --color-purple-background-button: #6246ea;
+  --color-purple-text-active: #4d34cf;
+  --color-lightyellow-shadow-tittle: #f3efba;
+  --color-orange-tertiary: #e45858;
+  /* gradients */
+  --radial-gradient-background: radial-gradient(
+    var(--color-white-background),
+    var(--color-lightblue-background)
+  );
+  /* box-shadows */
+  --box-shadows-landingPageComponent: 5px 5px 24px #272727;
+}

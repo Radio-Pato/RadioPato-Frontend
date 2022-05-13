@@ -1,0 +1,12 @@
+@import "../../Assets/css/variables.css";
+
+.main__container{
+    background-image: var(--radial-gradient-background);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+    
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
