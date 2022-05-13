@@ -1,15 +1,43 @@
+@import "../../Assets/css/variables.css";
+
 .main {
     display: flex;
 }
 .right {
+    margin: 10px 10px 10px;
     max-width: 260px;
 }
 .left {
     width: 100%;
 }
-@media (max-width: 624px) {
+
+.comments__container{
+    margin: 20px;
+    padding: 10px;
+    box-shadow: var(--box-shadows-landingPageComponent);
+    background-color: var(--color-purple-background-button);
+    border-radius: 20px;
+    border: 5px solid var(--color-purple-background-button);
+    border-style: outset;
+}
+
+.comment{
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: var(--box-shadows-landingPageComponent);
+    background-color: var(--color-lightpurple-active);
+    border-radius: 20px;
+    border: 5px solid var(--color-lightpurple-active);
+    border-style: outset;
+}
+
+/* Media queries */
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 992px) {
     .main {
-        display: inline-block;
+        flex-direction: column;
     }
     .right {
         max-width: unset;
