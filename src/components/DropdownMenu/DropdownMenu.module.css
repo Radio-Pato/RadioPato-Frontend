@@ -1,0 +1,10 @@
+@import "../../Assets/css/variables.css";
+
+.dropdownbutton {
+  background-color: var(--color-purple-background) !important;
+  border-color: var(--color-purple-background) !important;
+  -webkit-appearance: none !important;
+}
+.dropdown-toggle::after {
+  background-color: var(--color-purple-background) !important;
+}
