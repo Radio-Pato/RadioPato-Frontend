@@ -41,6 +41,11 @@
   background-color: var(--color-purple-background);
   min-width: 400px;
 }
+.serviciostitle:hover {
+  text-shadow: 1px 1px 2px black,
+    0 0 25px var(--color-lightyellow-shadow-tittle),
+    0 0 5px var(--color-lightyellow-shadow-tittle);
+}
 
 .logo {
   animation: rotation 2s infinite linear;
