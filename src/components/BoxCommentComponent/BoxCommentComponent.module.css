@@ -44,6 +44,7 @@
 
 .tab:hover{
     cursor: pointer;
+    color: var(--color-white-background);
 }
 
 .active{
