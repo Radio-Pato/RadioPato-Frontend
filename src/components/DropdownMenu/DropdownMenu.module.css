@@ -4,7 +4,25 @@
   background-color: var(--color-purple-background) !important;
   border-color: var(--color-purple-background) !important;
   -webkit-appearance: none !important;
+  color: var(--color-white-background) !important;
+  padding: 0px !important;
 }
-.dropdown-toggle::after {
-  background-color: var(--color-purple-background) !important;
+.dropdownbutton:focus {
+  border-color: var(--color-purple-background) !important;
+  box-shadow: var(--color-purple-background) !important;
+}
+.navLinks {
+  margin: 0 10px;
+  color: var(--color-white-background);
+  padding: 5px 15px;
+  transition: all 0.5s ease-in-out;
+  text-decoration: none;
+  color: var(--color-purple-background);
+}
+.dropdownmenu {
+  overflow: hidden;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }

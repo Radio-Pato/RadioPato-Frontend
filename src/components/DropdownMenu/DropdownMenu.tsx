@@ -7,6 +7,7 @@ import {
   DropdownMenu,
   DropdownToggle,
 } from "reactstrap";
+import { NavLink } from "react-router-dom";
 
 function MenuDropdown() {
   const [dropdown, setDropdown] = useState(false);
@@ -18,13 +19,21 @@ function MenuDropdown() {
     <div className="MenuDropdown">
       <Dropdown isOpen={dropdown} toggle={openCloseDropdown}>
         <DropdownToggle caret className={styles.dropdownbutton}>
-          Profile
+          Perfil
         </DropdownToggle>
 
         <DropdownMenu className={styles.dropdownmenu}>
-          <DropdownItem className={styles.options}>Ir a mi perfil</DropdownItem>
+          <DropdownItem className={styles.options}>
+            <NavLink className={styles.navLinks} to={"/profile"}>
+              Ir a mi perfil
+            </NavLink>
+          </DropdownItem>
           <DropdownItem divider />
-          <DropdownItem className={styles.options}>Cerrar sesión</DropdownItem>
+          <DropdownItem className={styles.options}>
+            <NavLink className={styles.navLinks} to={""}>
+              Cerrar sesión
+            </NavLink>
+          </DropdownItem>
         </DropdownMenu>
       </Dropdown>
     </div>
