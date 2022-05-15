@@ -9,27 +9,8 @@
 }
 .left {
     width: 100%;
-}
-
-.comments__container{
-    margin: 20px;
-    padding: 10px;
-    box-shadow: var(--box-shadows-landingPageComponent);
-    background-color: var(--color-purple-background-button);
-    border-radius: 20px;
-    border: 5px solid var(--color-purple-background-button);
-    border-style: outset;
-}
-
-.comment{
-    padding: 10px;
     margin-top: 10px;
-    margin-bottom: 10px;
-    box-shadow: var(--box-shadows-landingPageComponent);
-    background-color: var(--color-lightpurple-active);
-    border-radius: 20px;
-    border: 5px solid var(--color-lightpurple-active);
-    border-style: outset;
+    margin-left: 20px;
 }
 
 /* Media queries */
@@ -41,5 +22,9 @@
     }
     .right {
         max-width: unset;
+    }
+    .left{
+        width: auto;
+        margin-right: 20px;
     }
 }
