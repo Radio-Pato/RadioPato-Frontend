@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-let URL_MAIN= "http://localhost:3001/users/"
+let URL_MAIN= "http://localhost:3001/usuarios/"
 
 
 export const postRegister = async (data:any) => {
@@ -9,14 +9,8 @@ export const postRegister = async (data:any) => {
     return response;
   };
 
-  export const getRegister = async () => {
-    const bodyParameters:any = {
-      method: 'GET',
-            body: {
-              email:"nahyomi2000@gmail.com",password:"palmira123"
-            }
-    }
-    let URL = "http://localhost:3001/users/acceso";
-    let response = await axios.get(URL,bodyParameters);
+  export const getRegister = async (data:any) => {
+	let URL = `${URL_MAIN}acceso`;
+	let response = await axios.post(URL,data)
     return response;
   };

@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useState,useContext,useEffect } from "react";
 import ReactDOM from "react-dom";
 import { useForm } from "react-hook-form";
-import './Acceso.css' 
+import './Acceso.css'
+import { AuthContext } from "../../contexts/DataContext";
 import { getRegister } from '../../utils/Services'
+import { useNavigate } from 'react-router-dom'
+import Cookies from 'js-cookie'
+import swal from 'sweetalert'
 
 type TInputs = {
   email: string;
@@ -10,6 +14,8 @@ type TInputs = {
 };
 
 function Acceso() {
+    const  {auth, setAuth}:any = useContext(AuthContext)
+  let navigate = useNavigate();
   // React States
 
   const {
@@ -20,18 +26,35 @@ function Acceso() {
     reValidateMode: "onChange",
   });
 
-  /* const data = {email:"prueba@gmail.com",password:"palmira123"} */
 
-  const onSubmitTest = async (data: TInputs) =>{
-    console.log(data);
-    getRegister()
+  const onSubmitTest = async (data: any) =>{
+
+   getRegister(data)
     .then((res) => {
+      if(res.data.status === 200){
+        Cookies.set("access_token",res.data.token)
+        console.log( Cookies.get("access_token"))
+        setAuth(true) 
+        swal(
+          `${res.data.message}`
+        ) 
+      }
       console.log(res.data);
+      navigate('/home')
     })
     .catch((err) => {
+      if(err.response.data.status === 400) {
+        swal (
+          err.response.data.message
+        )
+      };
       console.error(err);
     });
   }
+
+  useEffect(() =>{
+   console.log(auth)
+  },[auth])
 
   return (
     <div className="appForm">
@@ -56,7 +79,7 @@ function Acceso() {
               <div className="errors">
                 Los apellidos no pueden contener mas de 60 carácteres
               </div>
-            )} 
+            )}
         </div>
         <div className="input-container">
         <input

@@ -1,9 +1,9 @@
 import "./Registro.css";
-import {useState, useContext} from 'react'
-import { AuthContext } from "../../contexts/DataContext"; 
+import { useState, useContext } from "react";
+import { AuthContext } from "../../contexts/DataContext";
 import { useForm } from "react-hook-form";
-import { postRegister } from '../../utils/Services'
-
+import { postRegister } from "../../utils/Services";
+import swal from 'sweetalert'
 
 type TInputs = {
   name: string;
@@ -14,10 +14,10 @@ type TInputs = {
   password: string;
 };
 interface Props {
-  setChanger:any
+  setChanger: any;
 }
-function Registro({setChanger}: Props): JSX.Element {
-/*   const  {auth, setAuth}:any = useContext(AuthContext) */
+function Registro({ setChanger }: Props): JSX.Element {
+  /*   const  {auth, setAuth}:any = useContext(AuthContext) */
   const {
     register,
     handleSubmit,
@@ -25,21 +25,27 @@ function Registro({setChanger}: Props): JSX.Element {
   } = useForm<TInputs>({
     reValidateMode: "onChange",
   });
-  const onSubmitTest = async (data: TInputs) =>{
-      postRegister(data)
+  const onSubmitTest = async (data: TInputs) => {
+    postRegister(data)
       .then((res) => {
-        console.log(res.data);
-        if(res.data.status===200){
+        console.log("respuesta de api",res.data);
+        if (res.data.status === 200) {
           /* setAuth(true) */
-          setChanger(true)
-          alert(`usuario ${res.data.data.name} fue registrado con Exito! iniciar Seccion primero`)
+          setChanger(true);
+          swal(
+            `Usuario ${res.data.data.name} fue registrado con Exito! iniciar Seccion primero`
+          ) 
         }
-      
       })
       .catch((err) => {
-        console.error(err);
+        if(err.response.data.status === 400) {
+          swal (
+            err.response.data.error
+          )
+        };
+        console.error(err.response.data);
       });
-    };
+  };
   return (
     <div className="containerForm">
       <form onSubmit={handleSubmit(onSubmitTest)} className="formStyle">
@@ -76,7 +82,7 @@ function Registro({setChanger}: Props): JSX.Element {
         )}
         {errors.surname?.type === "maxLength" && (
           <div className="errors">
-            Los apellidos no pueden contener mas de 120 carácteres
+            Los apellidos no pueden contener más de 120 carácteres
           </div>
         )}
 
@@ -142,8 +148,8 @@ function Registro({setChanger}: Props): JSX.Element {
           placeholder="Contraseña"
           {...register("password", {
             required: true,
-            minLength:8,
-			maxLength:120,
+            minLength: 8,
+            maxLength: 120,
           })}
         />
         {errors.password?.type === "required" && (
@@ -160,11 +166,11 @@ function Registro({setChanger}: Props): JSX.Element {
             La contraseña debe tener entre 8 y 120 carácteres
           </div>
         )}
-		{errors.password?.type === "pattern" && (
-			   <div className="errors">
-			   La contraseña solo puede tener carácteres alfanuméricos
-			 </div>
-		)}
+        {errors.password?.type === "pattern" && (
+          <div className="errors">
+            La contraseña solo puede tener carácteres alfanuméricos
+          </div>
+        )}
         <button type="submit">Registrarse</button>
       </form>
     </div>

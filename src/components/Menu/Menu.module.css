@@ -1,0 +1,64 @@
+@import "../../Assets/css/variables.css";
+
+details {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    margin-right: 20px;
+    background-color: var(--color-purple-background-button);
+    border-radius: 5px;
+}
+  summary {
+    position: relative;
+    writing-mode: vertical-lr;
+    text-align: center;
+    padding: 12px 10px;
+    width: 23px;
+    height: 17px;
+    color: black;
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+    transition: transform 200ms ease-in-out 0s;
+  }
+  summary::before,
+  summary::after {
+    position: absolute;
+    top: 4px;
+    left: -1px;
+  }
+  summary::before {
+    content: "";
+  }
+  summary::after {
+    content: "III";
+    color: var(--color-white-background);
+    padding: 5px;
+  }
+  summary:hover {
+    transform: scale(1.1);
+  }
+  summary::marker {
+    font-size: 0;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  details[open] .menu {
+    animation-name: menuAnim;
+  }
+  details[open] summary::before {
+    content: "X";
+    color: var(--color-white-background);
+    padding: 5px;
+  }
+  details[open] summary::after {
+    content: "";
+  }
+  details[open]::before {
+    animation: fadeMe 300ms linear forwards;
+  }
+
+  details[open]{
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
