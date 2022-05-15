@@ -8,7 +8,7 @@ function Footer() {
     <footer className={styles.footer}>
         <ul className={styles.socialMedia}>
             <li className={styles.icons}>
-                <a className={styles.branded}
+                <a className={styles.brandedIcon}
                     href='https://github.com/Radio-Pato'
                     target="_blank">
                     <FontAwesomeIcon icon={faGithub}/>
