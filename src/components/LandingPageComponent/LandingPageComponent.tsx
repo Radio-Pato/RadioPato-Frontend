@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./LandingPageComponent.module.css";
 import imagenes from "../../Assets/imagenes";
 import { Link } from "react-router-dom";
@@ -8,7 +7,6 @@ import {
   faLaptop,
   faDigitalTachograph,
   faHandsHelping,
-  faShuttleSpace,
 } from "@fortawesome/free-solid-svg-icons";
 
 function LandingPageComponent() {
