@@ -46,16 +46,19 @@
 }
 
 /* Media queries */
-@media (max-width: 992px) {
+@media (max-width: 768px) {
     .tabs__container{
         display: flex;
         flex-direction: column;
     }
 
     .tab{
-        margin-bottom: 5px;
+        margin-bottom: 10px;
         border-radius: 20px;
         text-align: center;
+        box-shadow: var(--box-shadows-tabs-responsive);
+        border: 5px solid var(--color-purple-background-button);
+        border-style: outset;
     }
 
     .comments__container{
