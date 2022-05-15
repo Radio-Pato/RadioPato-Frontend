@@ -67,6 +67,7 @@
   text-decoration: none;
   text-align: center;
   border-style: outset;
+  white-space: normal;
 }
 
 .linkAcceder:hover {
@@ -88,13 +89,23 @@
 }
 
 .title {
+  padding: 10px;
+  margin-top: 10px;
   font-weight: bold;
   text-shadow: 1px 1px 2px black,
     0 0 25px var(--color-lightyellow-shadow-tittle),
     0 0 5px var(--color-lightyellow-shadow-tittle);
+  font-size: 33px;
 }
 
 .slogan {
+  font-weight: bold;
+  font-size: 18px;
+  padding: 20px;
+}
+.slogan2 {
+  font-size: 16px;
+  padding: 10px;
   font-weight: bold;
 }
 
@@ -108,23 +119,31 @@
   grid-column-end: 3;
 }
 .serviciostitle {
+  font-size: 22px;
+  padding: 20px;
   text-align: center;
   grid-column-start: 1;
   grid-column-end: 4;
   font-weight: bold;
   width: 100%;
 }
+.contentidoservices {
+  padding: 8px;
+  font-size: 20px;
+  font-weight: bolder;
+}
 
 .icon {
   color: var(--color-orange-tertiary);
+  margin-bottom: 10px;
 }
 
 .cards {
   display: block;
   top: 0px;
   position: relative;
-  min-width: 200px;
-  max-width: 262px;
+  min-width: 250px;
+  max-width: 313px;
   background-color: var(--color-purple-background);
   border-radius: 4px;
   padding: 32px 24px;

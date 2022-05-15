@@ -1,70 +1,79 @@
 @import "../../Assets/css/variables.css";
 
 header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    background-color: var(--color-purple-background);
-    transition: all 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  background-color: var(--color-purple-background);
+  transition: all 0.5s ease-in-out;
 }
 
 .icon__container {
-    display: flex;
-    justify-content: space-around;
-    padding: 0.5em;
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5em;
 }
 
-.icon__container img{
-    height: 50%;
-    padding: 0.5em;
+.icon__container img {
+  height: 50%;
+  padding: 0.5em;
 }
 
 .nav {
-    display: flex;
-    margin-right: 20px;
+  display: flex;
+  margin-right: 20px;
 }
-.navLinks{
-    margin: 0 10px;
-    color: var(--color-white-background);
-    padding: 5px 15px;
-    transition:all 0.5s ease-in-out;
-    text-decoration: none; 
-} 
+
+.navLinks {
+  margin: 0 10px;
+  color: var(--color-white-background);
+  padding: 5px 15px;
+  transition: all 0.5s ease-in-out;
+  text-decoration: none;
+}
+.navLinks:hover {
+  transition: all 0.2s ease-out;
+  box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+  color: var(--color-white-background);
+}
 .navActive {
-    display: flex;
+  display: flex;
 }
 
 .burgerBtn {
-    display: none;
+  display: none;
 }
+h1 {
+  padding: 0px !important;
+  margin-top: 15px;
+}
+@media (max-width: 768px) {
+  .burgerBtn {
+    display: inline-block;
+  }
+  .nav {
+    position: absolute;
+    flex-direction: column;
+    right: 0;
+    top: 71px;
+    background: var(--color-purple-text-active);
+    opacity: 0.8;
+    border-top-left-radius: 5px;
+    width: 25%;
+    height: 20%;
+  }
+  .navInactive {
+    display: none;
+  }
 
-@media (max-width: 768px){
-    .burgerBtn{
-       display: inline-block; 
-    }
-    .nav{
-        position: absolute;
-        flex-direction: column;
-        right: 0;
-        top: 71px;
-        background: var(--color-purple-text-active);  
-        opacity: 0.8;
-        border-top-left-radius: 5px;
-        width: 25%;
-        height: 20%;
-    }
-    .navInactive {
-        display: none;  
-    } 
-
-    .navLinks{
-        border-bottom: 1px solid var(--color-white-background);
-        margin: 0;
-        padding: 10px;
-        text-align: center;
-        width: auto;
-        height: 50%;
-    }
+  .navLinks {
+    border-bottom: 1px solid var(--color-white-background);
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    width: auto;
+    height: 50%;
+  }
 }

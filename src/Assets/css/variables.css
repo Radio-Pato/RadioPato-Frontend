@@ -15,4 +15,5 @@
   );
   /* box-shadows */
   --box-shadows-landingPageComponent: 5px 5px 24px #272727;
+  --box-shadows-tabs-responsive: 5px 5px 12px #272727;
 }
