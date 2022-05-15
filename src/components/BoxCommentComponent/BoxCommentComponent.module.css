@@ -44,3 +44,21 @@
 .active{
     background-color: var(--color-purple-background-button) !important;
 }
+
+/* Media queries */
+@media (max-width: 992px) {
+    .tabs__container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tab{
+        margin-bottom: 5px;
+        border-radius: 20px;
+        text-align: center;
+    }
+
+    .comments__container{
+        border-top-left-radius: 20px;
+    }
+}
