@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./DropdownMenu.module.css";
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   Dropdown,
   DropdownItem,
