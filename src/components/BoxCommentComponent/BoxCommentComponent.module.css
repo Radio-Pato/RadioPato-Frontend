@@ -1,73 +1,92 @@
 @import "../../Assets/css/variables.css";
 
-.comments__container{
-    padding: 10px;
-    box-shadow: var(--box-shadows-landingPageComponent);
-    background-color: var(--color-purple-background-button);
-    border: 5px solid var(--color-purple-background-button);
-    border-style: outset;
-    
-    border-top-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    margin-bottom: 20px;
+.comments__container {
+  padding: 10px;
+  box-shadow: var(--box-shadows-landingPageComponent);
+  background-color: var(--color-purple-background-button);
+  border: 5px solid var(--color-purple-background-button);
+  border-style: outset;
+
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin-bottom: 20px;
 }
 
-.display__none{
-    display: none;
+.display__none {
+  display: none;
 }
 
-.comment{
-    padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    box-shadow: var(--box-shadows-landingPageComponent);
-    background-color: var(--color-lightpurple-active);
-    border-radius: 20px;
-    border: 5px solid var(--color-lightpurple-active);
-    border-style: outset;
+.comment {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: var(--box-shadows-landingPageComponent);
+  background-color: var(--color-lightpurple-active);
+  border-radius: 20px;
+  border: 5px solid var(--color-lightpurple-active);
+  border-style: outset;
 }
 
-.tabs__container{
-    padding-top: 20px;
-    padding-bottom: 20px;
+.tabs__container {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
-.tab{
-    text-decoration: none;
-    color: var(--color-white-background);
-    background-color: var(--color-purple-background);
-    padding: 20px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+.tab {
+  text-decoration: none;
+  color: var(--color-white-background);
+  background-color: var(--color-purple-background);
+  padding: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
-.tab:hover{
-    cursor: pointer;
+.tab:hover {
+  cursor: pointer;
 }
 
-.active{
-    background-color: var(--color-purple-background-button) !important;
+.active {
+  background-color: var(--color-purple-background-button) !important;
+}
+summary {
+  padding: 15px 14px;
+}
+.summary::after {
+  padding: 0px;
+}
+
+summary::after {
+  position: absolute;
+  top: -2px;
+  left: -9px;
+}
+summary::before,
+summary::after {
+  left: -14px;
+}
+summary::before {
+  top: 3px;
 }
 
 /* Media queries */
 @media (max-width: 768px) {
-    .tabs__container{
-        display: flex;
-        flex-direction: column;
-    }
+  .tabs__container {
+    display: flex;
+    flex-direction: column;
+  }
 
-    .tab{
-        margin-bottom: 10px;
-        border-radius: 20px;
-        text-align: center;
-        box-shadow: var(--box-shadows-tabs-responsive);
-        border: 5px solid var(--color-purple-background-button);
-        border-style: outset;
-    }
+  .tab {
+    margin-bottom: 10px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: var(--box-shadows-tabs-responsive);
+    border: 5px solid var(--color-purple-background-button);
+    border-style: outset;
+  }
 
-    .comments__container{
-        border-top-left-radius: 20px;
-        margin-bottom: 0px;
-    }
+  .comments__container {
+    border-top-left-radius: 20px;
+    margin-bottom: 0px;
+  }
 }

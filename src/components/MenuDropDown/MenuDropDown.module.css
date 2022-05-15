@@ -26,3 +26,10 @@
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
+@media (max-width: 768px) {
+  .dropdownbutton {
+    background-color: var(--color-purple-text-active) !important;
+    border-color: var(--color-purple-text-active) !important;
+    border: none !important;
+  }
+}
