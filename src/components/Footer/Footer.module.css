@@ -1,0 +1,35 @@
+@import "../../Assets/css/variables.css";
+
+.footer {
+    background-color: var(--color-purple-background);
+    margin-top: auto;
+}
+
+.socialMedia {
+    padding-left: 0;
+    margin-left: -5px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icons {
+    padding: 6px 20px;
+    font-size: 200%;
+} 
+.brandedIcon {
+    color: var(--color-purple-background-button) !important;
+    text-decoration: none;
+    display: inline-block;
+    font: normal normal normal 14px/1;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+.footer .socialMedia .icons:hover {
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
+    color: var(--color-purple-background-button) !important;
+    text-decoration: none;
+}
