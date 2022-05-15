@@ -8,6 +8,7 @@ import {
   faLaptop,
   faDigitalTachograph,
   faHandsHelping,
+  faShuttleSpace,
 } from "@fortawesome/free-solid-svg-icons";
 
 function LandingPageComponent() {
@@ -25,7 +26,7 @@ function LandingPageComponent() {
             <h3 className={styles.slogan}>
               Tu Aplicación Web para gestionar tu comunidad de vecinos.
             </h3>
-            <h4 className={styles.slogan}>
+            <h4 className={styles.slogan2}>
               &#129414; Mientras los gansos hacen honk, los patos hacen cuack.
               &#129414;
             </h4>
@@ -47,7 +48,7 @@ function LandingPageComponent() {
               className={styles.icon}
               size="2x"
             />
-            <h3>Varios dispositivos</h3>
+            <h3 className={styles.contentidoservices}>Varios dispositivos</h3>
             <p>
               Puedes acceder cómodamente desde tu móvil, tablet o pc para estar
               siempre informado.
@@ -59,7 +60,7 @@ function LandingPageComponent() {
               className={styles.icon}
               size="2x"
             />
-            <h3>Digitalizado</h3>
+            <h3 className={styles.contentidoservices}>Digitalizado</h3>
             <p>
               Deja atrás el papel y aporta tu marca verde digitalizando todo el
               contenido de tu comunidad de vecinos.
@@ -71,7 +72,7 @@ function LandingPageComponent() {
               className={styles.icon}
               size="2x"
             />
-            <h3>Sencillez</h3>
+            <h3 className={styles.contentidoservices}>Sencillez</h3>
             <p>
               Accede a todo el contenido desde cualquier lugar y en cualquier
               momento, de forma sencilla.

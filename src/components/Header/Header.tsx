@@ -1,18 +1,10 @@
-import React from "react";
+
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import Menu from "../Menu/Menu";
 import styles from "./Header.module.css";
 import imagenes from "../../Assets/imagenes";
-import "bootstrap/dist/css/bootstrap.min.css";
-import {
-  Dropdown,
-  DropdownItem,
-  DropdownMenu,
-  DropdownToggle,
-} from "reactstrap";
-import MenuDropdown from "../DropdownMenu/DropdownMenu";
-
+import MenuDropdown from "../MenuDropDown/MenuDropDown";
 function Header() {
   const [stylish, setStylish] = useState(false);
   return (
