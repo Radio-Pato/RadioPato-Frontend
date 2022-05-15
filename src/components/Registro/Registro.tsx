@@ -3,6 +3,7 @@ import { useState, useContext } from "react";
 import { AuthContext } from "../../contexts/DataContext";
 import { useForm } from "react-hook-form";
 import { postRegister } from "../../utils/Services";
+import swal from 'sweetalert'
 
 type TInputs = {
   name: string;
@@ -27,17 +28,22 @@ function Registro({ setChanger }: Props): JSX.Element {
   const onSubmitTest = async (data: TInputs) => {
     postRegister(data)
       .then((res) => {
-        console.log(res.data);
+        console.log("respuesta de api",res.data);
         if (res.data.status === 200) {
           /* setAuth(true) */
           setChanger(true);
-          alert(
-            `usuario ${res.data.data.name} fue registrado con Exito! iniciar Seccion primero`
-          );
+          swal(
+            `Usuario ${res.data.data.name} fue registrado con Exito! iniciar Seccion primero`
+          ) 
         }
       })
       .catch((err) => {
-        console.error(err);
+        if(err.response.data.status === 400) {
+          swal (
+            err.response.data.error
+          )
+        };
+        console.error(err.response.data);
       });
   };
   return (
