@@ -31,7 +31,7 @@
 .tab{
     text-decoration: none;
     color: var(--color-white-background);
-    background-color: var(--color-lightpurple-active);
+    background-color: var(--color-purple-background);
     padding: 20px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
