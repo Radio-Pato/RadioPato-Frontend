@@ -7,7 +7,7 @@ interface Props {
 }
 
 export function DataContextProvider(props:Props){
-    const [auth, setAuth ]= useState(false);
+    const [auth, setAuth ]= useState( false);
     const valor = {auth, setAuth};
 
     return (

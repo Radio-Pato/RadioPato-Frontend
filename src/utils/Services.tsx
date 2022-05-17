@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-let URL_MAIN= "http://localhost:3001/users/"
+let URL_MAIN= "http://localhost:3001/usuarios/"
 
 
 export const postRegister = async (data:any) => {
@@ -11,6 +11,6 @@ export const postRegister = async (data:any) => {
 
   export const getRegister = async (data:any) => {
 	let URL = `${URL_MAIN}acceso`;
-	let response = await axios.post('http://localhost:3001/users/acceso',data)
+	let response = await axios.post(URL,data)
     return response;
   };
