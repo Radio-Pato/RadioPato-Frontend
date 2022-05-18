@@ -2,13 +2,16 @@ import { useState,useEffect } from 'react';
 import {getSections} from '../../utils/Services'
 import axios from 'axios';
 import styles from './BoxCommentComponent.module.css'
+import { Link } from 'react-router-dom';
 
 function BoxCommentComponent() {
-    const [toggleState, setToggleState] = useState(1);
+    const [toggleState, setToggleState] = useState(0);
     const [section, setSection] = useState<any>([])
 
     const toggleTab = (index: number) => {
-        setToggleState(index);
+        if( !(toggleState === index) ){
+            setToggleState(index);
+        }
     };
 
     useEffect(() => {
@@ -68,10 +71,10 @@ function BoxCommentComponent() {
         <>
              <div className={styles.tabs__container}>
             {
-                section.map( (item:any) => (
-                    <a key={item._id } onClick={() => toggleTab(n+1)} className={toggleState === 1 ? `${styles.tab} ${styles.active}` : styles.tab}>
+                section.map( (item:any, index: number) => (
+                    <Link to={''} key={item._id } onClick={() => toggleTab(index)} className={toggleState === index ? `${styles.tab} ${styles.active}` : styles.tab}>
                         {item.title}
-                    </a>
+                    </Link>
                 )
             )}
             </div>
@@ -81,7 +84,7 @@ function BoxCommentComponent() {
                 <button >edictar secciones</button>
              */}
 
-            <div className={toggleState === 1 ? styles.comments__container : `${styles.comments__container} ${styles.display__none}`}>
+            <div className={toggleState === 0 ? styles.comments__container : `${styles.comments__container} ${styles.display__none}`}>
                 {
                     comentariosGeneral.map( comentario =>
                     <div key={comentario} className={styles.comment}>
@@ -91,7 +94,7 @@ function BoxCommentComponent() {
                 }
             </div>
 
-            <div className={toggleState === 2 ? styles.comments__container : `${styles.comments__container} ${styles.display__none}`}>
+            <div className={toggleState === 1 ? styles.comments__container : `${styles.comments__container} ${styles.display__none}`}>
                 {
                     comentariosComunicados.map( comentario =>
                     <div key={comentario} className={styles.comment}>
@@ -101,7 +104,7 @@ function BoxCommentComponent() {
                 }
             </div>
 
-            <div className={toggleState === 3 ? styles.comments__container : `${styles.comments__container} ${styles.display__none}`}>
+            <div className={toggleState === 2 ? styles.comments__container : `${styles.comments__container} ${styles.display__none}`}>
                 {
                     comentariosEventos.map( comentario =>
                     <div key={comentario}  className={styles.comment}>
