@@ -21,7 +21,6 @@ function RoutesMain() {
     }else {
       setAuth(true)
     }
-    console.log("cookies",cookies)
   },[cookies])
 
   return (

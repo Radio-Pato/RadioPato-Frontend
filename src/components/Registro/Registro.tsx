@@ -28,13 +28,12 @@ function Registro({ setChanger }: Props): JSX.Element {
   const onSubmitTest = async (data: TInputs) => {
     postRegister(data)
       .then((res) => {
-        console.log("respuesta de api",res.data);
         if (res.data.status === 200) {
           /* setAuth(true) */
           setChanger(true);
           swal(
             `Usuario ${res.data.data.name} fue registrado con Exito! iniciar Seccion primero`
-          ) 
+          )
         }
       })
       .catch((err) => {

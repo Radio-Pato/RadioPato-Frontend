@@ -33,13 +33,12 @@ function Acceso() {
     .then((res) => {
       if(res.data.status === 200){
         Cookies.set("access_token",res.data.token)
-        console.log( Cookies.get("access_token"))
-        setAuth(true) 
+		Cookies.set("email", res.data.email)
+        setAuth(true)
         swal(
           `${res.data.message}`
-        ) 
+        )
       }
-      console.log(res.data);
       navigate('/home')
     })
     .catch((err) => {
@@ -53,7 +52,6 @@ function Acceso() {
   }
 
   useEffect(() =>{
-   console.log(auth)
   },[auth])
 
   return (

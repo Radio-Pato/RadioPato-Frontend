@@ -1,0 +1,25 @@
+@import "../../Assets/css/variables.css";
+
+.profile {
+    padding: 10px;
+    box-shadow: var(--box-shadows-landingPageComponent);
+    background-color: var(--color-purple-background-button);
+    border: 5px solid var(--color-purple-background-button);
+    border-style: outset;
+    border-radius: 20px;
+    margin: 20px;
+    color: var(--color-white-background);
+}
+
+/* Media queries */
+@media (min-width: 768px) {
+    .profile{
+        background-color: green;
+    }
+}
+
+@media (min-width: 992px) {
+    .profile{
+        background-color: red;
+    }
+}
