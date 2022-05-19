@@ -1,13 +1,24 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
+import {getSections} from '../../utils/Services'
 import axios from 'axios';
 import styles from './BoxCommentComponent.module.css'
 
 function BoxCommentComponent() {
     const [toggleState, setToggleState] = useState(1);
+    const [section, setSection] = useState<any>([])
 
     const toggleTab = (index: number) => {
         setToggleState(index);
     };
+
+    useEffect(() => {
+
+        getSections()
+        .then((res)=>{
+            setSection(res.data.data)
+        })
+        
+        }, [section])
 
     var comentariosGeneral = [
         'Proin nec ornare odio, porttitor convallis libero. Fusce non aliquam felis. Vivamus et tincidunt nisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris libero tortor, accumsan at maximus vitae, accumsan a ipsum. Nulla ultrices nec purus tristique suscipit. Aenean ultrices volutpat ultricies. ',
@@ -46,20 +57,76 @@ function BoxCommentComponent() {
         'Praesent convallis tellus nulla, eget lacinia augue tincidunt vehicula. Cras placerat consequat sodales. Cras lacinia mauris quis tortor cursus commodo. Aliquam justo ipsum, sodales at pharetra in, porta eget turpis. In gravida consequat euismod. Vivamus porttitor varius tortor et pulvinar. Proin posuere, massa ut egestas egestas, tellus dolor faucibus ipsum, vitae vulputate dolor odio sollicitudin ante. Donec eu lorem nec augue tempor feugiat vel vel orci. Nunc semper odio vel tincidunt mollis. Sed at efficitur neque, a vestibulum tortor. Maecenas molestie mauris ultricies malesuada elementum. Pellentesque mollis, libero sollicitudin suscipit eleifend, urna lacus cursus velit, et tempus turpis neque ut purus. ',
         'Quisque consectetur lorem nec urna dapibus consequat. Praesent non odio blandit, sodales augue at, placerat nulla. Maecenas mollis viverra neque eu faucibus. In metus dolor, fringilla eget leo at, faucibus aliquam turpis. Vivamus at magna eu nisi venenatis ullamcorper id sit amet purus. Aliquam a neque tempor, iaculis ipsum at, aliquam lacus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut ornare lobortis libero vel laoreet. Vivamus maximus turpis dui, sed tincidunt felis dapibus ut. Nam erat magna, suscipit a consectetur a, cursus non justo. Suspendisse ultrices nibh quis venenatis sagittis. Curabitur eu vehicula orci. Aenean rutrum leo diam, et bibendum quam vestibulum quis. ',
     ];
-
-    /* 
-    axios.get(`https://`)
-      .then(res => {
-          
-      }) 
-    */
-
+    
+    let  n = 0
+   if(section.length <= 0 ){
+       console.log("prueba setion", section)
+       return <p>loading ...</p>
+   }else {
     return (
+
         <>
-        <div className={styles.tabs__container}>
+             <div className={styles.tabs__container}>
+            {  
+                section.map( (item:any) => (
+                    <a key={item._id } onClick={() => toggleTab(n+1)} className={toggleState === 1 ? `${styles.tab} ${styles.active}` : styles.tab}> 
+                        {item.title} 
+                    </a>
+                )   
+            )}
+            </div>
+             {/*    <a onClick={() => toggleTab(1)} className={toggleState === 1 ? `${styles.tab} ${styles.active}` : styles.tab}>General</a>
+                <a onClick={() => toggleTab(2)} className={toggleState === 2 ? `${styles.tab} ${styles.active}` : styles.tab}>Comunicados</a>
+                <a onClick={() => toggleTab(3)} className={toggleState === 3 ? `${styles.tab} ${styles.active}` : styles.tab}>Eventos</a>
+                <button >edictar secciones</button>
+             */}
+
+            <div className={toggleState === 1 ? styles.comments__container : `${styles.comments__container} ${styles.display__none}`}>
+                {
+                    comentariosGeneral.map( comentario =>
+                    <div key={comentario} className={styles.comment}>
+                        <p>{comentario}</p>
+                    </div>
+                    )
+                }
+            </div>
+
+            <div className={toggleState === 2 ? styles.comments__container : `${styles.comments__container} ${styles.display__none}`}>
+                {
+                    comentariosComunicados.map( comentario =>
+                    <div key={comentario} className={styles.comment}>
+                        <p>{comentario}</p>
+                    </div>
+                    )
+                }
+            </div>
+
+            <div className={toggleState === 3 ? styles.comments__container : `${styles.comments__container} ${styles.display__none}`}>
+                {
+                    comentariosEventos.map( comentario =>
+                    <div key={comentario}  className={styles.comment}>
+                        <p>{comentario}</p>
+                    </div>
+                    )
+                }
+            </div>
+        </>
+    ) 
+   }
+
+    /* return (
+
+        <>
+        <ul className={styles.tabs__container}>
+            <li onClick={() => toggleTab(1)} className={toggleState === 1 ? `${styles.tab} ${styles.active}` : styles.tab}> {section[0].title} </li>
+            <li onClick={() => toggleTab(2)} className={toggleState === 2 ? `${styles.tab} ${styles.active}` : styles.tab}>Comunicados</li>
+            <li onClick={() => toggleTab(3)} className={toggleState === 3 ? `${styles.tab} ${styles.active}` : styles.tab}>Eventos</li>
+        </ul> */
+      {/*   <div className={styles.tabs__container}>
             <a onClick={() => toggleTab(1)} className={toggleState === 1 ? `${styles.tab} ${styles.active}` : styles.tab}>General</a>
             <a onClick={() => toggleTab(2)} className={toggleState === 2 ? `${styles.tab} ${styles.active}` : styles.tab}>Comunicados</a>
             <a onClick={() => toggleTab(3)} className={toggleState === 3 ? `${styles.tab} ${styles.active}` : styles.tab}>Eventos</a>
+            <button >edictar secciones</button>
         </div>
 
         <div className={toggleState === 1 ? styles.comments__container : `${styles.comments__container} ${styles.display__none}`}>
@@ -90,9 +157,9 @@ function BoxCommentComponent() {
                 </div>
                 )
             }
-        </div>
-        </>
-    )
+        </div> */}
+   /*      </>
+    ) */
 }
 
 

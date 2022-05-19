@@ -14,3 +14,10 @@ export const postRegister = async (data:any) => {
 	let response = await axios.post(URL,data)
     return response;
   };
+
+
+  export const getSections = async () =>{
+	  let URL = "http://localhost:3001/secciones";
+	  let response = await axios.get(URL)
+	  return response
+  }
