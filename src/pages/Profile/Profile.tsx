@@ -1,9 +1,11 @@
-import React, { Children, useEffect, useState } from "react";
+import React, { Children, useContext, useEffect, useState } from "react";
 import Layout from "../../components/Layout/Layout";
 import styles from "./Profile.module.css";
 import { useForm } from "react-hook-form";
-import { getUsers, updateUser } from "../../utils/Services";
+import { getUsers, updateUser, deleteUser } from "../../utils/Services";
 import Cookies from "js-cookie";
+import { AuthContext } from "../../contexts/DataContext";
+import { useNavigate } from "react-router-dom";
 
 type TInputs = {
   name: string;
@@ -19,139 +21,120 @@ function Profile() {
   const token: String | undefined = Cookies.get("access_token");
 
   const [user, setUser] = useState<any>([]);
+	const {auth, setAuth}:any = useContext(AuthContext)
 
   useEffect(() => {
     getUsers(email, token).then((res) => {
       setUser(res.data.data);
+      console.log(user)
     });
-  }, [user]);
+  }, []);
 
-  // const [takeAway, setTakeAway] = useState({ takeAway: false, direction: "" })
+  //
 
-  // const handleInputChange = (event:any) => {
-  //   const target = event.target
-  //   if (target.name === "takeAway") {
-  //     setTakeAway({ takeAway: target.checked, direction: "" })
-  //   } else {
-  //     setTakeAway({ direction: target.value, takeAway: true })
-  //   }
-  // }
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
-    reValidateMode: "onChange",
+  const onChange = (e:any) => {
+    setUser({
+        ...user,
+        [e.target.name]: e.target.value
+    }
+    )
+}
+
+const {handleSubmit, register} = useForm<TInputs>({
+	reValidateMode: "onChange"
+})
+
+/* const changeSubmit = (e:any) => {
+  e.preventDefault();
+  console.log(user)
+  updateUser(user).then((res) => {
+    console.log(res);
+
   });
-  const [name, setName] = useState("nombre");
-  const handleChange = (event: any) => {
-    setName(event.target.value);
-  };
-  const onSubmit = async (data: any) => {
-    updateUser(data);
-    console.log(data);
-    console.log(updateUser);
-  };
+
+} */
+const onSubmitTest = async (data:any, e:any) =>{
+	data = user
+	e.preventDefault();
+	updateUser(data).then((res) => {
+		console.log(res);
+
+	  });
+}
+
+
+
+
+const navigate = useNavigate()
+const deleted = async () =>{
+	deleteUser(user)
+	.then((res) => {
+		if(res.status === 200){
+		Cookies.set('access_token',"")
+		Cookies.set('email',"")
+		Cookies.remove('access_token')
+		Cookies.remove('email')
+		setAuth(false)
+
+		}
+	  }).catch((err)=>{
+		console.error(err)
+	  })
+	navigate("/login")
+
+}
 
   if (user <= 0) {
     return <p>Loading...</p>;
   } else {
     return (
       <Layout>
-        <>
-          <p>{user.email}</p>
-          <div className="form">
-            <form onSubmit={handleSubmit(onSubmit)} className="formStyle">
-              <input
-                type="text"
-                id="name"
-                placeholder={user.name}
-                {...register("name", {
-                  required: true,
-                  maxLength: 60,
-                })}
-              />
-              {/* Errors */}
-              {errors.name?.type === "required" && (
-                <div className="errors">Debe introducir un Nombre</div>
-              )}
-              {errors.name?.type === "maxLength" && (
-                <div className="errors">
-                  El nombre no puede contener mas 60 carácteres
-                </div>
-              )}
-              <input
-                type="text"
-                id="surname"
-                placeholder="Apellidos"
-                value={user.surname}
-                {...register("surname", {
-                  required: true,
-                  maxLength: 120,
-                })}
-              />
-              {/* Errors */}
-              {errors.surname?.type === "required" && (
-                <div className="errors">
-                  Debe introducir al menos un apellido
-                </div>
-              )}
-              {errors.surname?.type === "maxLength" && (
-                <div className="errors">
-                  Los apellidos no pueden contener más de 120 carácteres
-                </div>
-              )}
+		  <>
+         <form onSubmit={handleSubmit(onSubmitTest)}>
+          <input
+            type="text"
+            placeholder="name"
+			{...register('name')}
+            value={user.name}
+            onChange={onChange}
+          />
 
-              <input
-                type="text"
-                id="address"
-                placeholder="Dirección"
-                value={user.address}
-                {...register("address", {
-                  required: true,
-                  maxLength: 200,
-                })}
-              />
-              {/* Errors */}
-              {errors.address?.type === "required" && (
-                <div className="errors">Debe introducir su dirección</div>
-              )}
-              {errors.address?.type === "maxLength" && (
-                <div className="errors">
-                  La dirección debe tener entre 5 y 200 carácteres
-                </div>
-              )}
+          <input
+            type="text"
+            {...register('surname')}
+            value={user.surname}
+            placeholder="surname"
+            onChange={onChange}
+          />
+          <input
+            type="text"
+           {...register('address')}
+            placeholder="Dirección"
+            value={user.address}
+            onChange={onChange}
+          />
+			     <input
+          type="text"
+          id="building"
+          placeholder="Edificio"
+		  value={user.building}
+          {...register("building")}
+		  onChange={onChange}
+        />
 
-              <input
-                type="text"
-                id="building"
-                placeholder="Edificio"
-                value={user.building}
-                {...register("building", {
-                  required: true,
-                  maxLength: 100,
-                })}
-              />
-              {errors.building?.type === "required" && (
-                <div className="errors">
-                  Debe introducir el edificio donde reside
-                </div>
-              )}
-              {errors.building?.type === "maxLength" && (
-                <div className="errors">
-                  El nombre del edificio no puede contener mas 100 carácteres
-                </div>
-              )}
-              <button type="submit">Editar</button>
-            </form>
-          </div>
-          <form>
-            <input onChange={handleChange} value={user.name} type="text" />
-          </form>
-        </>
+          <input type="submit" value="editar"/>
+        </form>
+
+		<button onClick={deleted}>Borrar</button>
+		</>
       </Layout>
     );
   }
 }
+
 export default Profile;
+
+function err(err: any) {
+	throw new Error("Function not implemented.");
+}

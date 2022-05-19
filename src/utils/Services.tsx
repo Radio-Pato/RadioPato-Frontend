@@ -34,3 +34,9 @@ export const updateUser = async (data: any) => {
   let response = await axios.patch(URL, data);
   return response;
 };
+
+export const deleteUser = async (data:any) =>{
+	let URL = `${URL_MAIN}usuarios/miperfil`;
+	let response = await axios.delete(URL, {data: data})
+	return response
+}
