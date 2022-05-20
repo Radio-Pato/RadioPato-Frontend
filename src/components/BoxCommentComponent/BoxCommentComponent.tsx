@@ -15,28 +15,22 @@ function BoxCommentComponent() {
     };
 
     useEffect(() => {
-
         getSections()
         .then((res)=>{
             setSection(res.data.data)
         })
-
     }, [section])
 
     useEffect(() => {
         getComments().then((res) => {
-            console.log(res.data.data);
             setComments(res.data.data);
         })
     }, []);
 
-    let  n = 0
    if(section.length <= 0 ){
-       console.log("prueba setion", section)
        return <p>loading ...</p>
    }else {
     return (
-
         <>
             <div className={styles.tabs__container}>
             {
@@ -55,94 +49,16 @@ function BoxCommentComponent() {
                             comments.filter((commentall: any) => commentall.section === section.title).map( (comment:any)=> (
                                 <div key={comment._id} className={styles.comment}>
                                     <p>{comment.text}</p>
+                                    <button>Borrar</button>
                                 </div>
                             ))
                         }
                     </div>
                 )
             )}
-
-
-            {/* <div className={toggleState === 0 ? styles.comments__container : `${styles.comments__container} ${styles.display__none}`}>
-                {
-                    comentariosGeneral.map( comentario =>
-                    <div key={comentario} className={styles.comment}>
-                        <p>{comentario}</p>
-                    </div>
-                    )
-                }
-            </div>
-
-            <div className={toggleState === 1 ? styles.comments__container : `${styles.comments__container} ${styles.display__none}`}>
-                {
-                    comentariosComunicados.map( comentario =>
-                    <div key={comentario} className={styles.comment}>
-                        <p>{comentario}</p>
-                    </div>
-                    )
-                }
-            </div>
-
-            <div className={toggleState === 2 ? styles.comments__container : `${styles.comments__container} ${styles.display__none}`}>
-                {
-                    comentariosEventos.map( comentario =>
-                    <div key={comentario}  className={styles.comment}>
-                        <p>{comentario}</p>
-                    </div>
-                    )
-                }
-            </div> */}
         </>
     )
    }
-
-    /* return (
-
-        <>
-        <ul className={styles.tabs__container}>
-            <li onClick={() => toggleTab(1)} className={toggleState === 1 ? `${styles.tab} ${styles.active}` : styles.tab}> {section[0].title} </li>
-            <li onClick={() => toggleTab(2)} className={toggleState === 2 ? `${styles.tab} ${styles.active}` : styles.tab}>Comunicados</li>
-            <li onClick={() => toggleTab(3)} className={toggleState === 3 ? `${styles.tab} ${styles.active}` : styles.tab}>Eventos</li>
-        </ul> */
-      {/*   <div className={styles.tabs__container}>
-            <a onClick={() => toggleTab(1)} className={toggleState === 1 ? `${styles.tab} ${styles.active}` : styles.tab}>General</a>
-            <a onClick={() => toggleTab(2)} className={toggleState === 2 ? `${styles.tab} ${styles.active}` : styles.tab}>Comunicados</a>
-            <a onClick={() => toggleTab(3)} className={toggleState === 3 ? `${styles.tab} ${styles.active}` : styles.tab}>Eventos</a>
-            <button >edictar secciones</button>
-        </div>
-
-        <div className={toggleState === 1 ? styles.comments__container : `${styles.comments__container} ${styles.display__none}`}>
-            {
-                comentariosGeneral.map( comentario =>
-                <div className={styles.comment}>
-                    <p>{comentario}</p>
-                </div>
-                )
-            }
-        </div>
-
-        <div className={toggleState === 2 ? styles.comments__container : `${styles.comments__container} ${styles.display__none}`}>
-            {
-                comentariosComunicados.map( comentario =>
-                <div className={styles.comment}>
-                    <p>{comentario}</p>
-                </div>
-                )
-            }
-        </div>
-
-        <div className={toggleState === 3 ? styles.comments__container : `${styles.comments__container} ${styles.display__none}`}>
-            {
-                comentariosEventos.map( comentario =>
-                <div className={styles.comment}>
-                    <p>{comentario}</p>
-                </div>
-                )
-            }
-        </div> */}
-   /*      </>
-    ) */
 }
-
 
 export default BoxCommentComponent
