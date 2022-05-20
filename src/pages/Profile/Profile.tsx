@@ -91,7 +91,8 @@ const deleted = async () =>{
     return (
       <Layout>
 		  <>
-         <form onSubmit={handleSubmit(onSubmitTest)}>
+		  <h2 className={styles.title}>&#129414; Bienvenida/o {user.email} ;D &#129414;</h2>
+         <form className={styles.profile} onSubmit={handleSubmit(onSubmitTest)}>
           <input
             type="text"
             placeholder="name"
@@ -123,10 +124,12 @@ const deleted = async () =>{
 		  onChange={onChange}
         />
 
-          <input type="submit" value="editar"/>
+			<div className={styles.buttonsForm}>
+				<button type="submit">Editar</button>
+				<button onClick={deleted}>Borrar</button>
+			</div>
         </form>
 
-		<button onClick={deleted}>Borrar</button>
 		</>
       </Layout>
     );

@@ -92,7 +92,7 @@ function BoxCommentComponent() {
                         }
 
 					<form onSubmit={handleSubmit(onSubmitTest)}>
-						<textarea cols={60} rows={5}  {...register('commentText')} value={comment[0]} onChange={onChange}></textarea>
+						<textarea cols={60} rows={5}  {...register('commentText')} value={comment} onChange={onChange}></textarea>
 						<button type="submit">Crear comentarios</button>
 					</form>
                     </div>
