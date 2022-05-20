@@ -134,7 +134,3 @@ const deleted = async () =>{
 }
 
 export default Profile;
-
-function err(err: any) {
-	throw new Error("Function not implemented.");
-}

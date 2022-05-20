@@ -1,14 +1,24 @@
 import { useState,useEffect } from 'react';
-import {getSections, getComments, deleteComents} from '../../utils/Services'
+import {getSections, getComments, deleteComents, createComent} from '../../utils/Services'
 import styles from './BoxCommentComponent.module.css'
 import { Link } from 'react-router-dom';
 import Cookies from 'js-cookie';
+import { useForm } from 'react-hook-form';
+type Tcomment = {
+		owner: String | undefined,
+		text: any,
+		section: String
+}
 
 function BoxCommentComponent() {
+	const owner = Cookies.get('email')
     const [toggleState, setToggleState] = useState(0);
     const [section, setSection] = useState<any>([]);
     const [comments, setComments] = useState<any>([]);
-	const owner = Cookies.get('email')
+
+	const [comment, setComment] = useState<any>()
+	const {handleSubmit, register} = useForm<any>();
+
     const toggleTab = (index: number) => {
         if( !(toggleState === index) ){
             setToggleState(index);
@@ -26,13 +36,32 @@ function BoxCommentComponent() {
         getComments().then((res) => {
             setComments(res.data.data);
         })
-    }, []);
+    }, [comments]);
 
 	const deleteComment = (comment:any)=>{
+			console.info(comment)
 				deleteComents(comment)
 				location.reload()
 
 	}
+	const onChange = (e:any) => {
+			setComment({
+				...comment,
+			 [e.target.name]: e.target.value
+			})
+			console.log(comment.commentText)
+	}
+
+	const onSubmitTest = (data:any,e:any)=>{
+		e.preventDefault();
+
+		console.log(section[toggleState].title)
+
+
+	}
+
+
+
    if(section.length <= 0 ){
        return <p>loading ...</p>
    }else {
@@ -55,18 +84,23 @@ function BoxCommentComponent() {
                             comments.filter((commentall: any) => commentall.section === section.title).map( (comment:any)=> (
                                 <div key={comment._id} className={styles.comment}>
                                     <p>{comment.text}</p>
-
 									<div style={{ display: comment.owner === owner ? "block" : "none" }}>
-									<button type="button" onClick={() => deleteComment(comment)}>Borrar</button>
+										<button type="button" onClick={() => deleteComment(comment)}>Borrar</button>
 									</div>
-
                                 </div>
-
                             ))
                         }
+
+					<form onSubmit={handleSubmit(onSubmitTest)}>
+						<textarea cols={60} rows={5}  {...register('commentText')} value={comment[0]} onChange={onChange}></textarea>
+						<button type="submit">Crear comentarios</button>
+					</form>
                     </div>
+
+
                 )
             )}
+
         </>
     )
    }
