@@ -40,3 +40,21 @@ export const deleteUser = async (data:any) =>{
 	let response = await axios.delete(URL, {data: data})
 	return response
 }
+
+export const getComments = async () => {
+  let URL = `${URL_MAIN}comentarios`;
+  let response = await axios.get(URL);
+  return response;
+}
+
+export const createComent = async (data: any) => {
+  let URL = `${URL_MAIN}comentarios`;
+  let response = await axios.post(URL, {data: data});
+  return response;
+}
+
+export const deleteComents = async (data: any) => {
+  let URL = `${URL_MAIN}comentarios`;
+  let response = await axios.delete(URL, {data: data});
+  return response;
+}
