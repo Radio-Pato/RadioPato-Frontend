@@ -1,25 +1,69 @@
 @import "../../Assets/css/variables.css";
 
 .profile {
-    padding: 10px;
-    box-shadow: var(--box-shadows-landingPageComponent);
-    background-color: var(--color-purple-background-button);
-    border: 5px solid var(--color-purple-background-button);
-    border-style: outset;
+	display: flex;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	flex-direction:column;
+	padding-top: 0;
+	padding-bottom: 10%;
+	padding-left:10%;
+	padding-right: 10%;
+
+}
+
+.profile input{
+	width: 95%;
+	padding: 10px;
+	border-radius: 5px;
+	outline: none;
+	border-color: rgba(0, 0, 0, .20);
+	margin: 5px;
+}
+.profile input:focus{
+	border-color: rgba(0, 0, 0, .50);
+}
+
+.profile button{
+	color: #fffffe;
+    margin-top: 20px;
     border-radius: 20px;
-    margin: 20px;
-    color: var(--color-white-background);
+    height: 45px;
+    width: 30%;
+    font-weight: 600;
+    letter-spacing: 1px;
+	padding: 10px;
+	border:none;
+	background-color:#6246ea;
+	cursor: pointer;
+}
+
+ .buttonsForm{
+	display:flex;
+	flex-direction: row;
+	width: 100%;
+	justify-content: space-around;
+}
+.buttonsForm > button{
+	width:30%;
+
+}
+
+.title{
+padding-top:10%;
+font-size:1.80rem;
+text-align:center
 }
 
 /* Media queries */
 @media (min-width: 768px) {
     .profile{
-        background-color: green;
+
     }
 }
 
 @media (min-width: 992px) {
     .profile{
-        background-color: red;
     }
 }
