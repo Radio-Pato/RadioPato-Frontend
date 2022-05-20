@@ -1,13 +1,14 @@
 import { useState,useEffect } from 'react';
-import {getSections, getComments} from '../../utils/Services'
+import {getSections, getComments, deleteComents} from '../../utils/Services'
 import styles from './BoxCommentComponent.module.css'
 import { Link } from 'react-router-dom';
+import Cookies from 'js-cookie';
 
 function BoxCommentComponent() {
     const [toggleState, setToggleState] = useState(0);
     const [section, setSection] = useState<any>([]);
     const [comments, setComments] = useState<any>([]);
-
+	const owner = Cookies.get('email')
     const toggleTab = (index: number) => {
         if( !(toggleState === index) ){
             setToggleState(index);
@@ -30,6 +31,11 @@ function BoxCommentComponent() {
         })
     }, []);
 
+	const deleteComment = (comment:any)=>{
+				deleteComents(comment)
+				location.reload()
+
+	}
     let  n = 0
    if(section.length <= 0 ){
        console.log("prueba setion", section)
@@ -55,7 +61,12 @@ function BoxCommentComponent() {
                             comments.filter((commentall: any) => commentall.section === section.title).map( (comment:any)=> (
                                 <div key={comment._id} className={styles.comment}>
                                     <p>{comment.text}</p>
+
+									<div style={{ display: comment.owner === owner ? "block" : "none" }}>
+									<button type="button" onClick={() => deleteComment(comment)}>Borrar</button>
+									</div>
                                 </div>
+
                             ))
                         }
                     </div>
