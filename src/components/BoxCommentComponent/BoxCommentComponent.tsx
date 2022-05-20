@@ -52,7 +52,7 @@ function BoxCommentComponent() {
                 section.map( (section:any, index: number) => (
                     <div className={toggleState === index ? styles.comments__container : `${styles.comments__container} ${styles.display__none}`}>
                         {
-                            comments.map( (comment:any)=> (
+                            comments.filter((commentall: any) => commentall.section === section.title).map( (comment:any)=> (
                                 <div key={comment._id} className={styles.comment}>
                                     <p>{comment.text}</p>
                                 </div>
