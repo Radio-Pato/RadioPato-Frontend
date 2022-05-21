@@ -24,7 +24,7 @@ body {
 }
 .login__right {
   width: 60%;
-  padding: 20px;
+  padding: 25px;
 
   min-height: 100%;
   display: flex;
@@ -64,7 +64,8 @@ body {
 }
 .img2 {
   background-image: url(/src/Assets/img/Register.jpg);
-  width: 293px;
+  width: 297px;
+  height: 615px;
 }
 
 /* Media queries */
