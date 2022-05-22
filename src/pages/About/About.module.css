@@ -53,6 +53,10 @@ a:link {
 }
 
 @media (max-width: 768px) {
+  h2 {
+    text-align: center;
+    margin: 20px;
+  }
   .bigcontainer {
     display: flex;
     flex-wrap: wrap;
@@ -71,6 +75,10 @@ a:link {
   }
 }
 @media (max-width: 1200px) {
+  h2 {
+    text-align: center;
+    margin: 20px;
+  }
   .container {
     display: flex;
     flex-wrap: wrap;
