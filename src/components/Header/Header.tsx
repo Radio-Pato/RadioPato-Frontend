@@ -4,6 +4,12 @@ import Menu from "../Menu/Menu";
 import styles from "./Header.module.css";
 import imagenes from "../../Assets/imagenes";
 import MenuDropdown from "../MenuDropDown/MenuDropDown";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faHouseChimney,
+  faDove,
+  faUserCircle,
+} from "@fortawesome/free-solid-svg-icons";
 function Header() {
   const [stylish, setStylish] = useState(false);
   return (
@@ -20,13 +26,24 @@ function Header() {
         }
       >
         <NavLink className={styles.navLinks} to={"/home"}>
-          Home
+          <FontAwesomeIcon
+            icon={faHouseChimney}
+            className={styles.icon}
+            size="lg"
+          />
+          Foro
         </NavLink>
         <NavLink className={styles.navLinks} to={""}>
+          <FontAwesomeIcon
+            icon={faUserCircle}
+            className={styles.icon}
+            size="lg"
+          />
           <MenuDropdown />
         </NavLink>
         <NavLink className={styles.navLinks} to={"/about"}>
-          About us
+          <FontAwesomeIcon icon={faDove} className={styles.icon} size="lg" />
+          El equipo
         </NavLink>
       </div>
       <div

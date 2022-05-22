@@ -6,6 +6,12 @@ import { getUsers, updateUser, deleteUser } from "../../utils/Services";
 import Cookies from "js-cookie";
 import { AuthContext } from "../../contexts/DataContext";
 import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faTrashAlt,
+  faTrashCan,
+  faUserPen,
+} from "@fortawesome/free-solid-svg-icons";
 
 type TInputs = {
   name: string;
@@ -21,56 +27,36 @@ function Profile() {
   const token: String | undefined = Cookies.get("access_token");
 
   const [user, setUser] = useState<any>([]);
-<<<<<<< HEAD
-/*   const [takeAway, setTakeAway] = useState(user) */
-=======
-	const {auth, setAuth}:any = useContext(AuthContext)
->>>>>>> 6ba653abb939c3094b5f1891c1b0271abd707412
 
+	const {auth, setAuth}:any = useContext(AuthContext)
   useEffect(() => {
     getUsers(email, token).then((res) => {
       setUser(res.data.data);
-      console.log(user)
+      console.log(user);
     });
   }, []);
-
-<<<<<<< HEAD
-  // 
-=======
-  //
->>>>>>> 6ba653abb939c3094b5f1891c1b0271abd707412
-
-
-  const onChange = (e:any) => {
+  const onChange = (e: any) => {
     setUser({
-        ...user,
-        [e.target.name]: e.target.value
-    }
-    )
-}
+      ...user,
+      [e.target.name]: e.target.value,
+    });
+  };
 
-<<<<<<< HEAD
+
 const changeSubmit = (e:any) => {
-=======
 const {handleSubmit, register} = useForm<TInputs>({
 	reValidateMode: "onChange"
 })
 
 /* const changeSubmit = (e:any) => {
->>>>>>> 6ba653abb939c3094b5f1891c1b0271abd707412
   e.preventDefault();
   console.log(user)
   updateUser(user).then((res) => {
     console.log(res);
-<<<<<<< HEAD
-    
   });
-
-=======
-
   });
-
 } */
+
 const onSubmitTest = async (data:any, e:any) =>{
 	data = user
 	e.preventDefault();
@@ -79,8 +65,6 @@ const onSubmitTest = async (data:any, e:any) =>{
 
 	  });
 }
-
-
 
 
 const navigate = useNavigate()
@@ -100,15 +84,15 @@ const deleted = async () =>{
 	  })
 	navigate("/login")
 
->>>>>>> 6ba653abb939c3094b5f1891c1b0271abd707412
 }
+
 
   if (user <= 0) {
     return <p>Loading...</p>;
   } else {
     return (
       <Layout>
-<<<<<<< HEAD
+
          <form onSubmit={changeSubmit}>
           <input
             type="text"
@@ -116,7 +100,6 @@ const deleted = async () =>{
             name="name"
             value={user.name}
             onChange={onChange} 
-=======
 		  <>
 		  <h2 className={styles.title}>&#129414; Bienvenida/o {user.email} ;D &#129414;</h2>
          <form className={styles.profile} onSubmit={handleSubmit(onSubmitTest)}>
@@ -126,35 +109,34 @@ const deleted = async () =>{
 			{...register('name')}
             value={user.name}
             onChange={onChange}
->>>>>>> 6ba653abb939c3094b5f1891c1b0271abd707412
           />
 
           <input
             type="text"
-<<<<<<< HEAD
+
             name="surname"
-=======
+
             {...register('surname')}
->>>>>>> 6ba653abb939c3094b5f1891c1b0271abd707412
+
             value={user.surname}
             placeholder="surname"
             onChange={onChange}
           />
           <input
             type="text"
-<<<<<<< HEAD
+
             name="address"
-=======
+
            {...register('address')}
->>>>>>> 6ba653abb939c3094b5f1891c1b0271abd707412
+
             placeholder="Dirección"
             value={user.address}
             onChange={onChange}
           />
-<<<<<<< HEAD
+
           <input type="submit" value="edictar"/>
         </form>
-=======
+
 			     <input
           type="text"
           id="building"
@@ -171,14 +153,12 @@ const deleted = async () =>{
         </form>
 
 		</>
->>>>>>> 6ba653abb939c3094b5f1891c1b0271abd707412
+
       </Layout>
     );
   }
 }
 
-<<<<<<< HEAD
+
 export default Profile;
-=======
-export default Profile;
->>>>>>> 6ba653abb939c3094b5f1891c1b0271abd707412
+

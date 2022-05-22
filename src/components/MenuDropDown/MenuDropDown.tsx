@@ -10,7 +10,7 @@ import {
 import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../../contexts/DataContext";
-import Cookies from 'js-cookie'
+import Cookies from "js-cookie";
 
 function MenuDropdown() {
   const [dropdown, setDropdown] = useState(false);
@@ -21,15 +21,14 @@ function MenuDropdown() {
   const navigate = useNavigate();
 
   const logout = async () => {
-
-	await axios.get("http://localhost:3001/usuarios/cierredesesion").then((res) => {
-		if(res.data.status === 200)
-		setAuth(false);
-		Cookies.remove("access_token")
-		Cookies.remove("email")
-	  });
-	navigate("/login");
-
+    await axios
+      .get("http://localhost:3001/usuarios/cierredesesion")
+      .then((res) => {
+        if (res.data.status === 200) setAuth(false);
+        Cookies.remove("access_token");
+        Cookies.remove("email");
+      });
+    navigate("/login");
   };
   return (
     <div className="MenuDropdown">
@@ -44,7 +43,7 @@ function MenuDropdown() {
               Ir a mi perfil
             </NavLink>
           </DropdownItem>
-          <DropdownItem divider />
+          <DropdownItem divider className={styles.divider} />
           <DropdownItem className={styles.options}>
             <span className={styles.navLinks} onClick={logout}>
               Cerrar sesión

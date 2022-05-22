@@ -25,8 +25,12 @@ header {
   display: flex;
   margin-right: 20px;
 }
-
+.icon {
+  padding: 5px;
+  color: var(--color-orange-tertiary);
+}
 .navLinks {
+  display: flex;
   margin: 0 10px;
   color: var(--color-white-background);
   padding: 5px 15px;
@@ -59,7 +63,7 @@ h1 {
     right: 0;
     top: 71px;
     background: var(--color-purple-text-active);
-    opacity: 0.8;
+    z-index: 5000;
     border-top-left-radius: 5px;
     width: 25%;
     height: 20%;
@@ -71,7 +75,7 @@ h1 {
   .navLinks {
     border-bottom: 1px solid var(--color-white-background);
     margin: 0;
-    padding: 10px;
+    padding: 5px;
     text-align: center;
     width: auto;
     height: 50%;
