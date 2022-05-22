@@ -31,7 +31,7 @@ function Header() {
             className={styles.icon}
             size="lg"
           />
-          Home
+          Foro
         </NavLink>
         <NavLink className={styles.navLinks} to={""}>
           <FontAwesomeIcon
@@ -43,7 +43,7 @@ function Header() {
         </NavLink>
         <NavLink className={styles.navLinks} to={"/about"}>
           <FontAwesomeIcon icon={faDove} className={styles.icon} size="lg" />
-          About us
+          Sobre nosotros
         </NavLink>
       </div>
       <div
