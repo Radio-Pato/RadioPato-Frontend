@@ -1,12 +1,11 @@
-import React from 'react'
-import './Menu.module.css'
+import "./Menu.module.css";
 
 function Menu() {
   return (
     <details>
-        <summary> </summary>
+      <summary> </summary>
     </details>
-  )
+  );
 }
 
-export default Menu
+export default Menu;

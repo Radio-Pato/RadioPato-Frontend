@@ -24,8 +24,8 @@ body {
 }
 .login__right {
   width: 60%;
-  padding: 20px;
-  
+  padding: 25px;
+
   min-height: 100%;
   display: flex;
   flex-direction: column;
@@ -51,7 +51,7 @@ body {
 }
 
 .images {
-  height: 565px; /* Valor quemado */
+  height: 605px; /* Valor quemado */
   width: 100%;
   background-size: cover;
   background-position: center;
@@ -60,11 +60,12 @@ body {
 }
 .img1 {
   background-image: url(/src/Assets/img/Access.jpg);
-  width: 285px;
+  width: 293px;
 }
 .img2 {
   background-image: url(/src/Assets/img/Register.jpg);
-  width: 285px;
+  width: 297px;
+  height: 615px;
 }
 
 /* Media queries */

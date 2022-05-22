@@ -1,0 +1,58 @@
+@import "../../Assets/css/variables.css";
+
+.dropdownbutton {
+  background-color: var(--color-purple-background) !important;
+  border-color: var(--color-purple-background) !important;
+  -webkit-appearance: none !important;
+  color: var(--color-white-background) !important;
+  padding: 0px !important;
+  margin: auto;
+}
+.options:hover {
+  background-color: var(--color-purple-text-active) !important;
+  transition: all 0.2s ease-out;
+  box-shadow: 0px 4px 8px rgb(38 38 38 / 20%);
+}
+.dropdownbutton:focus {
+  border-color: var(--color-purple-background) !important;
+  box-shadow: var(--color-purple-background) !important;
+}
+.divider {
+  border-bottom: 1px solid var(--color-white-background) !important;
+}
+.navLinks {
+  color: var(--color-white-background);
+  padding: 5px 15px;
+  transition: all 0.5s ease-in-out;
+  text-decoration: none;
+}
+.navLinks:hover {
+  color: var(--color-white-background);
+  background-color: var(--color-purple-text-active) !important;
+}
+
+.dropdown-item {
+  padding: 0px !important;
+}
+button .dropdown-item:hover {
+  background: var(--color-purple-text-active) !important;
+}
+.dropdown-menu:hover {
+  background: var(--color-purple-text-active) !important;
+}
+.dropdownmenu {
+  background: var(--color-purple-text-active);
+  padding: 0px !important;
+  overflow: hidden;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+@media (max-width: 768px) {
+  .dropdownbutton {
+    background-color: var(--color-purple-text-active) !important;
+    border-color: var(--color-purple-text-active) !important;
+    border: none !important;
+  }
+}
