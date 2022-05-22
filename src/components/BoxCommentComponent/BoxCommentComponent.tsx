@@ -114,6 +114,10 @@ function BoxCommentComponent() {
               .map((comment: any) => (
                 <div key={comment._id} className={styles.comment}>
                   <p>{comment.text}</p>
+                  <span>
+                    {comment.owner}&nbsp;
+                     {comment.creationdate}
+                  </span>
                   <div
                     className={styles.containercomment}
                     style={{

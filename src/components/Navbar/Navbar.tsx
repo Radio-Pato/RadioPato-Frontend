@@ -1,45 +1,37 @@
+import { useState,useEffect } from 'react';
 import styles from "./Navbar.module.css";
+import { getComments} from '../../utils/Services'
 
 function Navbar() {
+  const [comments, setComments] = useState<any>([]);
+
+  useEffect(() => {
+    getComments().then((res) => {
+        /* console.log(res.data.data) */
+        setComments(res.data.data);
+    })
+}, [comments]);
+
   return (
     <div>
+      
       <ul className={styles.news}>
-        <li className={styles.notice}>
-          <div>
-            <p>
-              <strong>Ultima noticia</strong>
-            </p>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum,
-              ex ob
-            </p>
-            <a href="#">Leer mas</a>
-          </div>
-        </li>
-        <li className={styles.notice}>
-          <div>
-            <p>
-              <strong>Ultima noticia</strong>
-            </p>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum,
-              ex ob
-            </p>
-            <a href="#">Leer mas</a>
-          </div>
-        </li>
-        <li className={styles.notice}>
-          <div>
-            <p>
-              <strong>Ultima noticia</strong>
-            </p>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum,
-              ex ob
-            </p>
-            <a href="#">Leer mas</a>
-          </div>
-        </li>
+      <p className={styles.comunicadostitle}>
+                        <strong>Últimos comunicados</strong>
+                      </p>
+            {
+               comments.filter((commentall: any) => commentall.section === "Comunicados").map( (comment:any)=> (
+                    <li className={styles.notice}>
+                    <div>
+
+                      <p>
+                      {comment.text}
+                      </p>
+                      
+                    </div>
+                  </li>
+            ))
+            }
       </ul>
     </div>
   );
