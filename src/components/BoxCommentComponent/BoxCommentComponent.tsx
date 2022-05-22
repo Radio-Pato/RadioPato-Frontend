@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 import Cookies from "js-cookie";
 import { useForm } from "react-hook-form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCirclePlus, faCommentDots } from "@fortawesome/free-solid-svg-icons";
+import { faCommentDots, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 type Tcomment = {
   owner: String | undefined;
   text: any;
@@ -23,7 +23,7 @@ function BoxCommentComponent() {
   const [section, setSection] = useState<any>([]);
   const [comments, setComments] = useState<any>([]);
 
-  const [comment, setComment] = useState<any>();
+  const [comentario, setComentario] = useState<any>({ comentario: "" });
   const { handleSubmit, register } = useForm<any>();
 
   const toggleTab = (index: number) => {
@@ -40,27 +40,38 @@ function BoxCommentComponent() {
 
   useEffect(() => {
     getComments().then((res) => {
+      /*  console.log(res.data.data) */
       setComments(res.data.data);
     });
   }, [comments]);
 
   const deleteComment = (comment: any) => {
-    console.info(comment);
-    deleteComents(comment);
-    location.reload();
+    const id = { _id: comment._id };
+    console.info(JSON.stringify(id));
+
+    deleteComents(id).then((res) => {
+      console.log(res.data);
+    });
   };
   const onChange = (e: any) => {
-    setComment({
-      ...comment,
+    setComentario({
       [e.target.name]: e.target.value,
     });
-    console.log(comment.commentText);
+    console.log(comentario.commentText);
   };
 
   const onSubmitTest = (data: any, e: any) => {
     e.preventDefault();
-
-    console.log(section[toggleState].title);
+    const NewComent = {
+      owner: owner,
+      text: comentario.comentario,
+      section: section[toggleState].title,
+    };
+    console.log(NewComent);
+    createComent(NewComent).then((res) => {
+      console.log(res);
+      setComentario({ comentario: "" });
+    });
   };
 
   if (section.length <= 0) {
@@ -80,7 +91,7 @@ function BoxCommentComponent() {
                   : styles.tab
               }
             >
-              {section.title}{" "}
+              {section.title}
               <FontAwesomeIcon
                 icon={faCommentDots}
                 className={styles.icon}
@@ -104,36 +115,40 @@ function BoxCommentComponent() {
                 <div key={comment._id} className={styles.comment}>
                   <p>{comment.text}</p>
                   <div
+                    className={styles.containercomment}
                     style={{
-                      display: comment.owner === owner ? "block" : "none",
+                      display: comment.owner === owner ? "flex" : "none",
                     }}
                   >
                     <button
+                      className={styles.botonborrar}
                       type="button"
                       onClick={() => deleteComment(comment)}
                     >
-                      Borrar
+                      <FontAwesomeIcon
+                        icon={faTrashCan}
+                        className={styles.icon}
+                        size="lg"
+                      />
                     </button>
                   </div>
                 </div>
               ))}
 
-            <form onSubmit={handleSubmit(onSubmitTest)}>
+            <form
+              className={styles.cajacomentarios}
+              onSubmit={handleSubmit(onSubmitTest)}
+            >
               <textarea
+                placeholder="Digite su comentario"
                 cols={60}
                 rows={5}
-                {...register("commentText")}
-                value={comment}
+                name="comentario"
+                value={comentario.comentario}
                 onChange={onChange}
-              ></textarea>
-              <button type="submit">
-                {" "}
-                Crear comentario{" "}
-                <FontAwesomeIcon
-                  icon={faCirclePlus}
-                  className={styles.icon}
-                  size="lg"
-                />
+              />
+              <button className={styles.addbutton} type="submit">
+                Comentar
               </button>
             </form>
           </div>

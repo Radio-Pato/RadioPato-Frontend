@@ -6,6 +6,7 @@
   -webkit-appearance: none !important;
   color: var(--color-white-background) !important;
   padding: 0px !important;
+  margin: auto;
 }
 .options:hover {
   background-color: var(--color-purple-text-active) !important;
@@ -41,7 +42,7 @@ button .dropdown-item:hover {
 }
 .dropdownmenu {
   background: var(--color-purple-text-active);
-
+  padding: 0px !important;
   overflow: hidden;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;

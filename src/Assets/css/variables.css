@@ -8,6 +8,7 @@
   --color-purple-text-active: #4d34cf;
   --color-lightyellow-shadow-tittle: #f3efba;
   --color-orange-tertiary: #e45858;
+  --color-purple-botoncomentar: #7c67d1;
   /* gradients */
   --radial-gradient-background: radial-gradient(
     var(--color-white-background),

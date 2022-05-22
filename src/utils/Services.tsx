@@ -35,26 +35,26 @@ export const updateUser = async (data: any) => {
   return response;
 };
 
-export const deleteUser = async (data:any) =>{
-	let URL = `${URL_MAIN}usuarios/miperfil`;
-	let response = await axios.delete(URL, {data: data})
-	return response
-}
+export const deleteUser = async (data: any) => {
+  let URL = `${URL_MAIN}usuarios/miperfil`;
+  let response = await axios.delete(URL, { data: data });
+  return response;
+};
 
 export const getComments = async () => {
   let URL = `${URL_MAIN}comentarios`;
   let response = await axios.get(URL);
   return response;
-}
+};
 
 export const createComent = async (data: any) => {
   let URL = `${URL_MAIN}comentarios`;
-  let response = await axios.post(URL, {data: data});
+  let response = await axios.post(URL, data);
   return response;
-}
+};
 
 export const deleteComents = async (data: any) => {
   let URL = `${URL_MAIN}comentarios`;
-  let response = await axios.delete(URL, {data: data});
+  let response = await axios.delete(URL, { data: data });
   return response;
-}
+};
