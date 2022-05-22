@@ -1,13 +1,12 @@
-import React, { Children } from 'react'
-import Footer from '../Footer/Footer'
-import Header from '../Header/Header'
-import styles from './Layout.module.css'
+import Footer from "../Footer/Footer";
+import Header from "../Header/Header";
+import styles from "./Layout.module.css";
 
-interface Props{
-    children : JSX.Element
-  }
+interface Props {
+  children: JSX.Element;
+}
 
-function Layout({children}: Props) {
+function Layout({ children }: Props) {
   return (
     <>
       <div className={styles.main__container}>
@@ -16,7 +15,7 @@ function Layout({children}: Props) {
         <Footer />
       </div>
     </>
-  )
+  );
 }
 
-export default Layout
+export default Layout;

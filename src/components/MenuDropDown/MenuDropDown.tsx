@@ -14,7 +14,7 @@ import Cookies from "js-cookie";
 
 function MenuDropdown() {
   const [dropdown, setDropdown] = useState(false);
-  const { auth, setAuth }: any = useContext(AuthContext);
+  const { setAuth }: any = useContext(AuthContext);
   const openCloseDropdown = () => {
     setDropdown(!dropdown);
   };

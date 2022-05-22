@@ -1,13 +1,12 @@
-
-import React, { Children, useContext } from 'react'
-import { AuthContext } from '../../contexts/DataContext'
-import Navbar from '../../components/Navbar/Navbar'
-import Layout from '../../components/Layout/Layout'
-import styles from './Home.module.css'
-import BoxCommentComponent from '../../components/BoxCommentComponent/BoxCommentComponent'
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/DataContext";
+import Navbar from "../../components/Navbar/Navbar";
+import Layout from "../../components/Layout/Layout";
+import styles from "./Home.module.css";
+import BoxCommentComponent from "../../components/BoxCommentComponent/BoxCommentComponent";
 
 function Home() {
-  const  {auth, setAuth}:any = useContext(AuthContext)
+  const { auth, setAuth }: any = useContext(AuthContext);
   return (
     <Layout>
       <main className={styles.main}>
@@ -19,7 +18,7 @@ function Home() {
         </section>
       </main>
     </Layout>
-  )
+  );
 }
 
-export default Home
+export default Home;

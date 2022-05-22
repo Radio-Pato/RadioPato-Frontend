@@ -1,4 +1,4 @@
-import React, { Children, useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Layout from "../../components/Layout/Layout";
 import styles from "./Profile.module.css";
 import { useForm } from "react-hook-form";
@@ -28,7 +28,6 @@ function Profile() {
   useEffect(() => {
     getUsers(email, token).then((res) => {
       setUser(res.data.data);
-      console.log(user);
     });
   }, []);
 
@@ -45,19 +44,10 @@ function Profile() {
     reValidateMode: "onChange",
   });
 
-  /* const changeSubmit = (e:any) => {
-  e.preventDefault();
-  console.log(user)
-  updateUser(user).then((res) => {
-    console.log(res);
-  });
-} */
   const onSubmitTest = async (data: any, e: any) => {
     data = user;
     e.preventDefault();
-    updateUser(data).then((res) => {
-      console.log(res);
-    });
+    updateUser(data).then((res) => {});
   };
 
   const navigate = useNavigate();
@@ -72,9 +62,7 @@ function Profile() {
           setAuth(false);
         }
       })
-      .catch((err) => {
-        console.error(err);
-      });
+      .catch((err) => {});
     navigate("/login");
   };
 

@@ -11,12 +11,7 @@ import Cookies from "js-cookie";
 import { useForm } from "react-hook-form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCommentDots, faTrashCan } from "@fortawesome/free-solid-svg-icons";
-import swal from 'sweetalert';
-type Tcomment = {
-  owner: String | undefined;
-  text: any;
-  section: String;
-};
+import swal from "sweetalert";
 
 function BoxCommentComponent() {
   const owner = Cookies.get("email");
@@ -25,7 +20,7 @@ function BoxCommentComponent() {
   const [comments, setComments] = useState<any>([]);
 
   const [comentario, setComentario] = useState<any>({ comentario: "" });
-  const { handleSubmit, register } = useForm<any>();
+  const { handleSubmit } = useForm<any>();
 
   const toggleTab = (index: number) => {
     if (!(toggleState === index)) {
@@ -41,42 +36,34 @@ function BoxCommentComponent() {
 
   useEffect(() => {
     getComments().then((res) => {
-      /*  console.log(res.data.data) */
       setComments(res.data.data);
     });
   }, [comments]);
 
-  const deleteComment = (comment:any)=>{
-    const id = {_id: comment._id}
-        console.info( JSON.stringify(id))
-        swal({
-            title: "¿Esta segur@?",
-            text: "Una vez eliminado, no se podra recuperar el comentario",
-            icon: "warning",
-            buttons:true,
-            dangerMode: true,
-        })
-          .then((willDelete) => {
-            if (willDelete) {
-              swal("¡Se ha eliminado con exito su comentario!", {
-                icon: "success",
-              });
-              deleteComents(id)
-                .then((res) => {
-                    console.log(res.data)
-                })
-            } else {
-              swal("Has cancelado la eliminación del comentario");
-            }
-          });
+  const deleteComment = (comment: any) => {
+    const id = { _id: comment._id };
 
-
-}
+    swal({
+      title: "¿Esta segur@?",
+      text: "Una vez eliminado, no se podra recuperar el comentario",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        swal("¡Se ha eliminado con exito su comentario!", {
+          icon: "success",
+        });
+        deleteComents(id).then((res) => {});
+      } else {
+        swal("Has cancelado la eliminación del comentario");
+      }
+    });
+  };
   const onChange = (e: any) => {
     setComentario({
       [e.target.name]: e.target.value,
     });
-    console.log(comentario.commentText);
   };
 
   const onSubmitTest = (data: any, e: any) => {
@@ -86,9 +73,8 @@ function BoxCommentComponent() {
       text: comentario.comentario,
       section: section[toggleState].title,
     };
-    console.log(NewComent);
+
     createComent(NewComent).then((res) => {
-      console.log(res);
       setComentario({ comentario: "" });
     });
   };
@@ -135,7 +121,7 @@ function BoxCommentComponent() {
                   <p>{comment.text}</p>
                   <span>
                     {comment.owner}&nbsp;
-                     {comment.creationdate}
+                    {comment.creationdate}
                   </span>
                   <div
                     className={styles.containercomment}

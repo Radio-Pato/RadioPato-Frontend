@@ -1,9 +1,7 @@
 import "./Registro.css";
-import { useState, useContext } from "react";
-import { AuthContext } from "../../contexts/DataContext";
 import { useForm } from "react-hook-form";
 import { postRegister } from "../../utils/Services";
-import swal from 'sweetalert'
+import swal from "sweetalert";
 
 type TInputs = {
   name: string;
@@ -17,7 +15,6 @@ interface Props {
   setChanger: any;
 }
 function Registro({ setChanger }: Props): JSX.Element {
-  /*   const  {auth, setAuth}:any = useContext(AuthContext) */
   const {
     register,
     handleSubmit,
@@ -33,16 +30,13 @@ function Registro({ setChanger }: Props): JSX.Element {
           setChanger(true);
           swal(
             `Usuario ${res.data.data.name} fue registrado con Exito! iniciar Seccion primero`
-          )
+          );
         }
       })
       .catch((err) => {
-        if(err.response.data.status === 400) {
-          swal (
-            err.response.data.error
-          )
-        };
-        console.error(err.response.data);
+        if (err.response.data.status === 400) {
+          swal(err.response.data.error);
+        }
       });
   };
   return (
