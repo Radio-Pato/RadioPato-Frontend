@@ -14,13 +14,13 @@ function About() {
           <div className={styles.firstcards}>
             <div className={styles.cards}>
               <img
-                src={imagenes.fotoMaria.src}
-                alt={imagenes.fotoMaria.src}
+                src={imagenes.FotoAlejandro.src}
+                alt={imagenes.FotoAlejandro.src}
                 className={styles.img}
               />
               <h4>Alejandro Velázquez Bueno</h4>
               <h5>Desarrollador FullStack</h5>
-              <p>email</p>
+              <p>alejandrovelazquezbueno@gmail.com</p>
               <a
                 target="_blank"
                 href="https://linkedin.com/in/alejandro-velázquez-bueno"
@@ -46,13 +46,13 @@ function About() {
             </div>
             <div className={styles.cards}>
               <img
-                src={imagenes.fotoMaria.src}
-                alt={imagenes.fotoMaria.src}
+                src={imagenes.fotoDavid.src}
+                alt={imagenes.fotoDavid.src}
                 className={styles.img}
               />
               <h4>David Leandro Medina Soloza</h4>
               <h5>Desarrollador FullStack</h5>
-              <p>email</p>
+              <p>damedsol@outlook.com</p>
               <a
                 target="_blank"
                 href="https://linkedin.com/in/david-medina-soloza"
@@ -77,13 +77,13 @@ function About() {
           <div className={styles.lastcards}>
             <div className={styles.cards}>
               <img
-                src={imagenes.fotoMaria.src}
-                alt={imagenes.fotoMaria.src}
+                src={imagenes.fotoNahomi.src}
+                alt={imagenes.fotoNahomi.src}
                 className={styles.img}
               />
               <h4>Nahomi Conde Velasco</h4>
               <h5>Desarrolladora FullStack</h5>
-              <p>email</p>
+              <p>nahyomi2000@gmail.com</p>
               <a target="_blank" href="https://linkedin.com/in/nahomiconde">
                 {" "}
                 <FontAwesomeIcon

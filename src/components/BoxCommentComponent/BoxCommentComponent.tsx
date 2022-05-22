@@ -11,6 +11,7 @@ import Cookies from "js-cookie";
 import { useForm } from "react-hook-form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCommentDots, faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import swal from 'sweetalert';
 type Tcomment = {
   owner: String | undefined;
   text: any;
@@ -45,14 +46,32 @@ function BoxCommentComponent() {
     });
   }, [comments]);
 
-  const deleteComment = (comment: any) => {
-    const id = { _id: comment._id };
-    console.info(JSON.stringify(id));
+  const deleteComment = (comment:any)=>{
+    const id = {_id: comment._id}
+        console.info( JSON.stringify(id))
+        swal({
+            title: "¿Esta segur@?",
+            text: "Una vez eliminado, no se podra recuperar el comentario",
+            icon: "warning",
+            buttons:true,
+            dangerMode: true,
+        })
+          .then((willDelete) => {
+            if (willDelete) {
+              swal("¡Se ha eliminado con exito su comentario!", {
+                icon: "success",
+              });
+              deleteComents(id)
+                .then((res) => {
+                    console.log(res.data)
+                })
+            } else {
+              swal("Has cancelado la eliminación del comentario");
+            }
+          });
 
-    deleteComents(id).then((res) => {
-      console.log(res.data);
-    });
-  };
+
+}
   const onChange = (e: any) => {
     setComentario({
       [e.target.name]: e.target.value,

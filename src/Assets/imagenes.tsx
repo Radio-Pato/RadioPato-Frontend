@@ -7,7 +7,9 @@ import Logo_68 from "./img/Logo_Radio_Pato_68.png";
 import Access from "./img/Access.jpg";
 import Register from "./img/Register.jpg";
 import fotoMaria from "./img/fotoMaria.jpg";
-
+import FotoAlejandro from "./img/FotoAlejandro.jpg"
+import fotoDavid from "./img/fotoDavid.png"
+import fotoNahomi from "./img/fotoNahomi.jpeg"
 export default {
   Logo960: {
     alt: "Logo_Radio_Pato_960",
@@ -44,5 +46,17 @@ export default {
   fotoMaria: {
     alt: "Foto de Maria",
     src: fotoMaria,
+  },
+  FotoAlejandro: {
+    alt: "Foto de Alejandro",
+    src: FotoAlejandro,
+  },
+  fotoDavid: {
+    alt: "Foto de David",
+    src: fotoDavid,
+  },
+  fotoNahomi: {
+    alt: "Foto de Nahomi",
+    src: fotoNahomi,
   },
 };
