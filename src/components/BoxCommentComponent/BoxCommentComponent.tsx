@@ -45,13 +45,13 @@ function BoxCommentComponent() {
 
     swal({
       title: "¿Esta segur@?",
-      text: "Una vez eliminado, no se podra recuperar el comentario",
+      text: "Una vez eliminado, no se podrá recuperar el comentario. 😵",
       icon: "warning",
-      buttons: true,
+      buttons: [true,true],
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        swal("¡Se ha eliminado con exito su comentario!", {
+        swal("¡Se ha eliminado con éxito su comentario! 😶", {
           icon: "success",
         });
         deleteComents(id).then((res) => {});

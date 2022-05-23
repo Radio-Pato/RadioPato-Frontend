@@ -32,13 +32,13 @@ function Acceso() {
           Cookies.set("access_token", res.data.token);
           Cookies.set("email", res.data.email);
           setAuth(true);
-          swal(`${res.data.message}`);
+          swal('🦆 Bienvenida/o de nuevo 😄 🦆');
         }
         navigate("/home");
       })
       .catch((err) => {
         if (err.response.data.status === 400) {
-          swal(err.response.data.message);
+          swal(`Se ha producido un error al intentar iniciar sesión, inténtelo de nuevo`);
         }
       });
   };

@@ -8,7 +8,8 @@ import { AuthContext } from "../../contexts/DataContext";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan, faUserPen } from "@fortawesome/free-solid-svg-icons";
-
+import swal from "sweetalert";
+import LoadComponent from "../../components/LoadComponent/LoadComponent";
 type TInputs = {
   name: string;
   surname: string;
@@ -47,33 +48,67 @@ function Profile() {
   const onSubmitTest = async (data: any, e: any) => {
     data = user;
     e.preventDefault();
-    updateUser(data).then((res) => {});
+
+    swal({
+      title: "¿Esta segura/o?",
+      text: "Se va a proceder a editar sus datos, esta acción es irreversible",
+      icon: "warning",
+      buttons: [true, true],
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        updateUser(data).then((res) => {});
+        swal("Datos actualizados correctamente. 😊", {
+          icon: "success",
+        });
+      }
+    });
   };
 
   const navigate = useNavigate();
   const deleted = async () => {
-    deleteUser(user)
-      .then((res) => {
-        if (res.status === 200) {
-          Cookies.set("access_token", "");
-          Cookies.set("email", "");
-          Cookies.remove("access_token");
-          Cookies.remove("email");
-          setAuth(false);
-        }
-      })
-      .catch((err) => {});
-    navigate("/login");
+    swal({
+      title: "¿Esta segur/o?",
+      text: "Una vez eliminado el usuario no podrá volver a acceder 😱",
+      icon: "warning",
+      buttons: [true, true],
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        deleteUser(user).then((res) => {
+          if (res.status === 200) {
+            Cookies.set("access_token", "");
+            Cookies.set("email", "");
+            Cookies.remove("access_token");
+            Cookies.remove("email");
+            setAuth(false);
+          }
+
+          swal("Usuario eliminado correctamente. 🥺", {
+            icon: "success",
+          });
+        });
+        navigate("/login");
+      } else {
+        swal("Eliminación de usuario cancelada");
+      }
+    });
   };
 
   if (user <= 0) {
-    return <p>Loading...</p>;
+    return (
+      <>
+        <div className={styles.loading}>
+          <LoadComponent></LoadComponent>
+        </div>
+      </>
+    );
   } else {
     return (
       <Layout>
         <>
           <h2 className={styles.title}>
-            &#129414; Bienvenida/o {user.email} ;D &#129414;
+            &#129414; Hola, {user.email} ;D &#129414;
           </h2>
           <form
             className={styles.profile}

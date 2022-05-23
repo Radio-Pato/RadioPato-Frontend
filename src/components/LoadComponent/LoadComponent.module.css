@@ -1,8 +1,9 @@
+@import "../../Assets/css/variables.css";
 /* CSS for Reactstrap */
 .spinnerReactstrap {
   width: 150px !important;
   height: 150px !important;
-  color: #F2EFF1 !important;
+  color: var(--color-purple-background-button) !important;
   border: 10px solid currentColor !important;
   border-right-color: transparent !important;
 }

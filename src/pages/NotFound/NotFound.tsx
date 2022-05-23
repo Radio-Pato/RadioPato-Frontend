@@ -1,12 +1,20 @@
 import { Link } from "react-router-dom";
 import Layout from "../../components/Layout/Layout";
+import styles from "./NotFound.module.css"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHouseChimney} from "@fortawesome/free-solid-svg-icons"
 
 function NotFound() {
   return (
     <Layout>
       <>
-        <h1>Error 404</h1>
-        <Link to="/Home">Go Home</Link>
+	  	<h2>No hemos encontrado la página solicitada </h2>
+        <h2>¯ \ _ (ツ) _ / ¯</h2>
+		<div className={styles.btnhome}>
+        <Link className={styles.btnhomtext}  to="/Home">Ir al foro
+		<span> <FontAwesomeIcon icon={faHouseChimney} size="lg"></FontAwesomeIcon></span>
+		</Link>
+		</div>
       </>
     </Layout>
   );

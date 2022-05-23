@@ -56,6 +56,14 @@
   text-align: center;
 }
 
+.loading {
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+
+}
+
 /* Media queries */
 @media (min-width: 768px) {
   .profile {

@@ -13,6 +13,7 @@ header {
 .icon__container {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   padding: 0.5em;
 }
 
@@ -48,6 +49,14 @@ header {
 
 .burgerBtn {
   display: none;
+}
+.appname {
+	tex-decoration: none;
+	color:black;
+}
+.appname:hover {
+	text-decoration:none;
+	color:black;
 }
 h1 {
   padding: 0px !important;

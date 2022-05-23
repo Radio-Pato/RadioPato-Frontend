@@ -10,6 +10,7 @@ import fotoMaria from "./img/fotoMaria.jpg";
 import FotoAlejandro from "./img/FotoAlejandro.jpg"
 import fotoDavid from "./img/fotoDavid.png"
 import fotoNahomi from "./img/fotoNahomi.jpeg"
+import wtf from "./wtf/Pato_de_Camejo.jpg"
 export default {
   Logo960: {
     alt: "Logo_Radio_Pato_960",
@@ -59,4 +60,8 @@ export default {
     alt: "Foto de Nahomi",
     src: fotoNahomi,
   },
+  wtf:{
+	  alt: "Wtf es un Pato",
+	  src: wtf,
+  }
 };

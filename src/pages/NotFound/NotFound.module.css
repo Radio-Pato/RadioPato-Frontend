@@ -1,0 +1,17 @@
+@import "../../Assets/css/variables.css";
+.btnhome  {
+	display:flex;
+	justify-content:center;
+}
+.btnhome>a {
+	padding:10px;
+	background-color:var(--color-purple-background-button);
+	color:white;
+	border-radius: 20px;
+	font-weight: bold;
+}
+.btnhome>a:hover{
+  background-color: var(--color-purple-background);
+  font-weight: bold;
+  cursor: pointer;
+}

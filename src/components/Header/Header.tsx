@@ -15,8 +15,13 @@ function Header() {
   return (
     <header>
       <div className={styles.icon__container}>
-        <img src={imagenes.Logo68.src} alt={imagenes.Logo68.alt} />
-        <h1>Radio Pato</h1>
+    <img src={imagenes.Logo68.src} alt={imagenes.Logo68.alt} />
+
+		<NavLink className={styles.appname} to={"/home"}>
+		<h1> Radio Pato</h1>
+		</NavLink>
+
+
       </div>
       <div
         className={
