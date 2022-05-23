@@ -50,7 +50,7 @@ function Profile() {
     e.preventDefault();
 
     swal({
-      title: "¿Esta segura/o?",
+      title: "¿Está segura/o?",
       text: "Se va a proceder a editar sus datos, esta acción es irreversible",
       icon: "warning",
       buttons: [true, true],
@@ -65,10 +65,26 @@ function Profile() {
     });
   };
 
+  // const navigate = useNavigate();
+  // const deleted = async () => {
+  //   deleteUser(user)
+  //     .then((res) => {
+  //       if (res.status === 200) {
+  //         Cookies.set("access_token", "");
+  //         Cookies.set("email", "");
+  //         Cookies.remove("access_token");
+  //         Cookies.remove("email");
+  //         setAuth(false);
+  //       }
+  //     })
+  //     .catch((err) => {});
+  //   navigate("/login");
+  // };
+
   const navigate = useNavigate();
   const deleted = async () => {
     swal({
-      title: "¿Esta segur/o?",
+      title: "¿Está segura/o?",
       text: "Una vez eliminado el usuario no podrá volver a acceder 😱",
       icon: "warning",
       buttons: [true, true],
@@ -82,13 +98,12 @@ function Profile() {
             Cookies.remove("access_token");
             Cookies.remove("email");
             setAuth(false);
+            swal("Usuario eliminado correctamente. 🥺", {
+              icon: "success",
+            });
+            navigate("/login");
           }
-
-          swal("Usuario eliminado correctamente. 🥺", {
-            icon: "success",
-          });
         });
-        navigate("/login");
       } else {
         swal("Eliminación de usuario cancelada");
       }
@@ -154,16 +169,18 @@ function Profile() {
                   size="lg"
                 />
               </button>
-              <button onClick={deleted}>
-                Borrar
-                <FontAwesomeIcon
-                  icon={faTrashCan}
-                  className={styles.icon}
-                  size="lg"
-                />
-              </button>
             </div>
           </form>
+          <div className={styles.buttonDelete}>
+            <button onClick={deleted}>
+              Borrar
+              <FontAwesomeIcon
+                icon={faTrashCan}
+                className={styles.icon}
+                size="lg"
+              />
+            </button>
+          </div>
         </>
       </Layout>
     );

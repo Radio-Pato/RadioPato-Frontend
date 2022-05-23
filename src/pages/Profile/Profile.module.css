@@ -7,7 +7,7 @@
   justify-content: center;
   flex-direction: column;
   padding-top: 0;
-  padding-bottom: 10%;
+  padding-bottom: 2%;
   padding-left: 10%;
   padding-right: 10%;
 }
@@ -31,7 +31,7 @@
   margin-top: 20px;
   border-radius: 20px;
   height: 45px;
-  width: 30%;
+  width: 24%;
   font-weight: 600;
   letter-spacing: 1px;
   padding: 10px;
@@ -39,7 +39,25 @@
   background-color: #6246ea;
   cursor: pointer;
 }
-
+.buttonDelete {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2%;
+}
+.buttonDelete > button {
+  color: #fffffe;
+  margin-top: 20px;
+  border-radius: 20px;
+  height: 45px;
+  width: 30%;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 10px;
+  border: none;
+  background-color: #6246ea;
+  cursor: pointer;
+  width: 24%;
+}
 .buttonsForm {
   display: flex;
   flex-direction: row;
@@ -57,11 +75,10 @@
 }
 
 .loading {
-	display:flex;
-	align-items: center;
-	justify-content: center;
-	min-height: 100vh;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 }
 
 /* Media queries */
