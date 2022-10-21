@@ -43,3 +43,5 @@ src/
 | ------ | ------ |
 | npm install | install all dependencies |
 | npm run dev | run server|
+
+## Deployment :  <a href="https://radiopato.netlify.app/" target="_blank">Demo</a>
