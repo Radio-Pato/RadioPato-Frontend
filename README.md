@@ -3,6 +3,8 @@ Web application to manage the community of neighbors
 
 This project will hold all the packages for the frontend.
 
+## Backend : https://github.com/Radio-Pato/RadioPato-Backend
+
 ## Structure 
 
 ```
